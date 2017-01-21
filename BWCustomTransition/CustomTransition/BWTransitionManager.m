@@ -11,6 +11,7 @@
 #import "BWTransitionManager+FadeAndScale.h"
 #import "BWTransitionManager+PageIn.h"
 #import "BWTransitionManager+PageOut.h"
+#import "BWTransitionManager+PhotoBrowserIn.h"
 @interface BWTransitionManager()
 @end
 @implementation BWTransitionManager
@@ -35,6 +36,8 @@
             break;
         case BWAnimationTransition_PageOut:
             return [self generatePageOutAnimationWithDuration:duration];
+        case BWAnimationTransition_PhotoBrowserIn:
+            return [self generatePhotoBrowserInAnimationWithDuration:duration];
         default:
             break;
     }
@@ -57,5 +60,11 @@
     }else{
         return [super respondsToSelector:aSelector];
     }
+}
+-(UIImageView *)getTransitionImgView{
+    UIImageView * transitionImgView = [[UIImageView alloc]init];
+    transitionImgView.image = self.photoBrowserImgView.image;
+    transitionImgView.contentMode = self.photoBrowserImgView.contentMode;
+    return transitionImgView;
 }
 @end

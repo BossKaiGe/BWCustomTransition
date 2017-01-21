@@ -13,11 +13,13 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_Custom,
     BWAnimationTransition_FadeAndScale,
     BWAnimationTransition_PageIn,
-    BWAnimationTransition_PageOut
+    BWAnimationTransition_PageOut,
+    BWAnimationTransition_PhotoBrowserIn
 };
 @interface BWTransitionManager : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
 @property(nonatomic,strong)UIView * fromView;
 @property(nonatomic,strong)UIView * toView;
+@property(nonatomic,strong)UIImageView * photoBrowserImgView;
 @property(nonatomic,assign)BWAnimationTransition stackInType;
 @property(nonatomic,assign)BWAnimationTransition stackOutType;
 @property(nonatomic,assign)BWAnimationTransition tabTransitionType;
@@ -28,6 +30,7 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
 @property(nonatomic,assign)CGFloat transitionDuration_StackOut;
 @property(nonatomic,assign)CGFloat transitionDuration_TabTransition;
 @property(nonatomic,weak)id originDelegate;
+-(UIImageView *)getTransitionImgView;
 -(void)generateAnimation;
 -(void)setStackInBlock:(CustomAnimationBlock)stackInBlock;
 -(void)setStackOutBlock:(CustomAnimationBlock)stackOutBlock;

@@ -19,6 +19,10 @@
 		8B01D8501E2B3EA40062459A /* UIViewController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8461E2B3EA40062459A /* UIViewController+animationBlock.m */; };
 		8B01D8531E2B56B20062459A /* BWImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8521E2B56B20062459A /* BWImgViewController.m */; };
 		8B66489C1E32E4BF005F4B8C /* BWTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */; };
+		8B6648A21E3324F4005F4B8C /* BWTransitionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6648A11E3324F4005F4B8C /* BWTransitionCollectionCell.m */; };
+		8B6648AB1E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6648AA1E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.m */; };
+		8B6648B01E334748005F4B8C /* BWPhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6648AD1E334748005F4B8C /* BWPhotoBrowserVC.m */; };
+		8B6648B11E334748005F4B8C /* BWPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6648AF1E334748005F4B8C /* BWPhotoBrowserView.m */; };
 		8BDB40831D7BD481006DDFF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDB40821D7BD481006DDFF8 /* main.m */; };
 		8BDB40861D7BD481006DDFF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDB40851D7BD481006DDFF8 /* AppDelegate.m */; };
 		8BDB408E1D7BD481006DDFF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDB408D1D7BD481006DDFF8 /* Assets.xcassets */; };
@@ -51,6 +55,15 @@
 		8B02451E1D8CE5410099FE5E /* BWCustomTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BWCustomTransition.h; path = ../BWCustomTransition.h; sourceTree = "<group>"; };
 		8B66489A1E32E4BF005F4B8C /* BWTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTransitionViewController.h; sourceTree = "<group>"; };
 		8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTransitionViewController.m; sourceTree = "<group>"; };
+		8B6648A01E3324F4005F4B8C /* BWTransitionCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTransitionCollectionCell.h; sourceTree = "<group>"; };
+		8B6648A11E3324F4005F4B8C /* BWTransitionCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTransitionCollectionCell.m; sourceTree = "<group>"; };
+		8B6648A91E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BWTransitionManager+PhotoBrowserIn.h"; sourceTree = "<group>"; };
+		8B6648AA1E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BWTransitionManager+PhotoBrowserIn.m"; sourceTree = "<group>"; };
+		8B6648AC1E334748005F4B8C /* imageList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageList.h; sourceTree = "<group>"; };
+		8B6648AD1E334748005F4B8C /* BWPhotoBrowserVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWPhotoBrowserVC.m; sourceTree = "<group>"; };
+		8B6648AE1E334748005F4B8C /* BWPhotoBrowserView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWPhotoBrowserView.h; sourceTree = "<group>"; };
+		8B6648AF1E334748005F4B8C /* BWPhotoBrowserView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWPhotoBrowserView.m; sourceTree = "<group>"; };
+		8B6648B21E335823005F4B8C /* BWPhotoBrowserVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BWPhotoBrowserVC.h; sourceTree = "<group>"; };
 		8BDB407E1D7BD481006DDFF8 /* BWCustomTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWCustomTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDB40821D7BD481006DDFF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BDB40841D7BD481006DDFF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -85,6 +98,8 @@
 				8B01D83A1E2B3EA40062459A /* BWTransitionManager+PageIn.m */,
 				8B01D83B1E2B3EA40062459A /* BWTransitionManager+PageOut.h */,
 				8B01D83C1E2B3EA40062459A /* BWTransitionManager+PageOut.m */,
+				8B6648A91E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.h */,
+				8B6648AA1E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.m */,
 				8B01D83D1E2B3EA40062459A /* BWTransitionManager.h */,
 				8B01D83E1E2B3EA40062459A /* BWTransitionManager.m */,
 				8B01D83F1E2B3EA40062459A /* NSObject+Swizzle.h */,
@@ -125,6 +140,13 @@
 				8B01D8521E2B56B20062459A /* BWImgViewController.m */,
 				8B66489A1E32E4BF005F4B8C /* BWTransitionViewController.h */,
 				8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */,
+				8B6648A01E3324F4005F4B8C /* BWTransitionCollectionCell.h */,
+				8B6648A11E3324F4005F4B8C /* BWTransitionCollectionCell.m */,
+				8B6648AC1E334748005F4B8C /* imageList.h */,
+				8B6648B21E335823005F4B8C /* BWPhotoBrowserVC.h */,
+				8B6648AD1E334748005F4B8C /* BWPhotoBrowserVC.m */,
+				8B6648AE1E334748005F4B8C /* BWPhotoBrowserView.h */,
+				8B6648AF1E334748005F4B8C /* BWPhotoBrowserView.m */,
 				8BDB408D1D7BD481006DDFF8 /* Assets.xcassets */,
 				8BDB408F1D7BD481006DDFF8 /* LaunchScreen.storyboard */,
 				8BDB40921D7BD481006DDFF8 /* Info.plist */,
@@ -214,6 +236,7 @@
 				8B01D84F1E2B3EA40062459A /* UITabBarController+animationBlock.m in Sources */,
 				8B01D84E1E2B3EA40062459A /* UINavigationController+animationBlock.m in Sources */,
 				8B01D8471E2B3EA40062459A /* BWCustomAnimation.m in Sources */,
+				8B6648A21E3324F4005F4B8C /* BWTransitionCollectionCell.m in Sources */,
 				8B01D84C1E2B3EA40062459A /* BWTransitionManager.m in Sources */,
 				8B01D84D1E2B3EA40062459A /* NSObject+Swizzle.m in Sources */,
 				8B01D84B1E2B3EA40062459A /* BWTransitionManager+PageOut.m in Sources */,
@@ -224,6 +247,9 @@
 				8B01D8531E2B56B20062459A /* BWImgViewController.m in Sources */,
 				8B01D8491E2B3EA40062459A /* BWTransitionManager+FadeAndScale.m in Sources */,
 				8B66489C1E32E4BF005F4B8C /* BWTransitionViewController.m in Sources */,
+				8B6648AB1E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.m in Sources */,
+				8B6648B11E334748005F4B8C /* BWPhotoBrowserView.m in Sources */,
+				8B6648B01E334748005F4B8C /* BWPhotoBrowserVC.m in Sources */,
 				8BDB40831D7BD481006DDFF8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
