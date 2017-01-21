@@ -20,10 +20,6 @@
     [self.view addSubview:self.bgImg];
 }
 
--(void)setBgImgWith:(UIImage *)bgImg{
-    self.bgImg.image = bgImg;
-}
-
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     
 }
@@ -35,6 +31,7 @@
     if (_bgImg == nil) {
         _bgImg = [[UIImageView alloc]init];
         _bgImg.frame = [UIScreen mainScreen].bounds;
+        _bgImg.image = [UIImage imageNamed:@"bg_img_2"];
     }
     return _bgImg;
 }

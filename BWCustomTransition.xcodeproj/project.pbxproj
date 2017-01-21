@@ -18,9 +18,9 @@
 		8B01D84F1E2B3EA40062459A /* UITabBarController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8441E2B3EA40062459A /* UITabBarController+animationBlock.m */; };
 		8B01D8501E2B3EA40062459A /* UIViewController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8461E2B3EA40062459A /* UIViewController+animationBlock.m */; };
 		8B01D8531E2B56B20062459A /* BWImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8521E2B56B20062459A /* BWImgViewController.m */; };
+		8B66489C1E32E4BF005F4B8C /* BWTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */; };
 		8BDB40831D7BD481006DDFF8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDB40821D7BD481006DDFF8 /* main.m */; };
 		8BDB40861D7BD481006DDFF8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDB40851D7BD481006DDFF8 /* AppDelegate.m */; };
-		8BDB40891D7BD481006DDFF8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BDB40881D7BD481006DDFF8 /* ViewController.m */; };
 		8BDB408E1D7BD481006DDFF8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BDB408D1D7BD481006DDFF8 /* Assets.xcassets */; };
 		8BDB40911D7BD481006DDFF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDB408F1D7BD481006DDFF8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -49,12 +49,12 @@
 		8B01D8511E2B56B20062459A /* BWImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWImgViewController.h; sourceTree = "<group>"; };
 		8B01D8521E2B56B20062459A /* BWImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWImgViewController.m; sourceTree = "<group>"; };
 		8B02451E1D8CE5410099FE5E /* BWCustomTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BWCustomTransition.h; path = ../BWCustomTransition.h; sourceTree = "<group>"; };
+		8B66489A1E32E4BF005F4B8C /* BWTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTransitionViewController.h; sourceTree = "<group>"; };
+		8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTransitionViewController.m; sourceTree = "<group>"; };
 		8BDB407E1D7BD481006DDFF8 /* BWCustomTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BWCustomTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDB40821D7BD481006DDFF8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BDB40841D7BD481006DDFF8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8BDB40851D7BD481006DDFF8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		8BDB40871D7BD481006DDFF8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		8BDB40881D7BD481006DDFF8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		8BDB408D1D7BD481006DDFF8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8BDB40901D7BD481006DDFF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8BDB40921D7BD481006DDFF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -121,10 +121,10 @@
 				8B01D8321E2B3EA40062459A /* CustomTransition */,
 				8BDB40841D7BD481006DDFF8 /* AppDelegate.h */,
 				8BDB40851D7BD481006DDFF8 /* AppDelegate.m */,
-				8BDB40871D7BD481006DDFF8 /* ViewController.h */,
-				8BDB40881D7BD481006DDFF8 /* ViewController.m */,
 				8B01D8511E2B56B20062459A /* BWImgViewController.h */,
 				8B01D8521E2B56B20062459A /* BWImgViewController.m */,
+				8B66489A1E32E4BF005F4B8C /* BWTransitionViewController.h */,
+				8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */,
 				8BDB408D1D7BD481006DDFF8 /* Assets.xcassets */,
 				8BDB408F1D7BD481006DDFF8 /* LaunchScreen.storyboard */,
 				8BDB40921D7BD481006DDFF8 /* Info.plist */,
@@ -212,7 +212,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B01D84F1E2B3EA40062459A /* UITabBarController+animationBlock.m in Sources */,
-				8BDB40891D7BD481006DDFF8 /* ViewController.m in Sources */,
 				8B01D84E1E2B3EA40062459A /* UINavigationController+animationBlock.m in Sources */,
 				8B01D8471E2B3EA40062459A /* BWCustomAnimation.m in Sources */,
 				8B01D84C1E2B3EA40062459A /* BWTransitionManager.m in Sources */,
@@ -224,6 +223,7 @@
 				8B01D8501E2B3EA40062459A /* UIViewController+animationBlock.m in Sources */,
 				8B01D8531E2B56B20062459A /* BWImgViewController.m in Sources */,
 				8B01D8491E2B3EA40062459A /* BWTransitionManager+FadeAndScale.m in Sources */,
+				8B66489C1E32E4BF005F4B8C /* BWTransitionViewController.m in Sources */,
 				8BDB40831D7BD481006DDFF8 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

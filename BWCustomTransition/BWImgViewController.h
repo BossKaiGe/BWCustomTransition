@@ -9,5 +9,4 @@
 #import <UIKit/UIKit.h>
 
 @interface BWImgViewController : UIViewController
--(void)setBgImgWith:(UIImage *)bgImg;
 @end
