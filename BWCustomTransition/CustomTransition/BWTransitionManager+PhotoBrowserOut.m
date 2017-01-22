@@ -28,4 +28,21 @@
         }];
     };
 }
+-(void)upDataImgWithPhotoListIndexPath:(NSIndexPath *)indexPath photoPropertyNameInListCell:(NSString *)propertyName{
+    id cell = [self.photoListView cellForItemAtIndexPath:indexPath];
+    unsigned int outCount, i;
+    objc_property_t *properties = class_copyPropertyList([cell class], &outCount);
+    for (i = 0; i<outCount; i++)
+    {
+        objc_property_t property = properties[i];
+        const char* char_f =property_getName(property);
+        NSString *key = [NSString stringWithUTF8String:char_f];
+        if (key == propertyName) {
+            id propertyValue = [self valueForKey:(NSString *)key];
+            self.photoBrowserImgView = propertyValue;
+        }
+    }
+    free(properties);
+}
+
 @end

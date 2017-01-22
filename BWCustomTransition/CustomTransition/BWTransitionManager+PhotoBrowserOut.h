@@ -10,4 +10,5 @@
 
 @interface BWTransitionManager (PhotoBrowserOut)
 -(CustomAnimationBlock)generatePhotoBrowserOutAnimationWithDuration:(CGFloat)duration;
+-(void)upDataImgWithPhotoListIndexPath:(NSIndexPath *)indexPath photoPropertyNameInListCell:(NSString *)propertyName;
 @end
