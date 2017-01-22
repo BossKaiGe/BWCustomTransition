@@ -10,5 +10,5 @@
 
 @interface BWPhotoBrowserView : UICollectionView
 @property (nonatomic,strong) UIPageControl * pageControl;
--(instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout imageList:(NSMutableArray *)imageList;
+-(instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout imageList:(NSArray *)imageList;
 @end

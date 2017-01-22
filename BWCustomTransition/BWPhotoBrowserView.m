@@ -17,7 +17,6 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
 
 -(instancetype)initWithFrame:(CGRect)frame collectionViewLayout:(UICollectionViewLayout *)layout imageList:(NSArray *)imageList
 {
-    
     if ([super initWithFrame:frame collectionViewLayout:layout]) {
         self.imageList = imageList;
         self.backgroundColor = [UIColor whiteColor];
@@ -31,11 +30,9 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
         self.bounces = false;
         
         [self registerClass:[BWTransitionCollectionCell self] forCellWithReuseIdentifier:kCollectionCellId];
-        
         self.dataSource = self;
         self.delegate = self;
         return self;
-        
     }
     return nil;
 }

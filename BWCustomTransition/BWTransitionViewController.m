@@ -91,12 +91,22 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
             ws.stackOutType = BWAnimationTransition_PhotoBrowserIn;
         }
     }];
+    UIAlertAction * photoBrowserOutAction = [UIAlertAction actionWithTitle:@"BWAnimationTransition_PhotoBrowserOut" style:(UIAlertActionStyleDefault) handler:^(UIAlertAction * _Nonnull action) {
+        ws.collectionView.hidden = NO;
+        if (transitionType == ChooseAnimationType_StackIn) {
+            ws.stackInType = BWAnimationTransition_PhotoBrowserOut;
+        }else{
+            ws.stackOutType = BWAnimationTransition_PhotoBrowserOut;
+        }
+    }];
+    
 
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"cancel" style:(UIAlertActionStyleDefault) handler:nil];
     [alert addAction:fadeAndScaleAction];
     [alert addAction:pageInAction];
     [alert addAction:pageOutAction];
     [alert addAction:photoBrowserInAction];
+    [alert addAction:photoBrowserOutAction];
     [alert addAction: cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
@@ -121,18 +131,16 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
 #pragma mark:UICollectionViewDelegate && UICollectionViewDataSource
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     BWTransitionCollectionCell * collectionCell = (BWTransitionCollectionCell *)[collectionView cellForItemAtIndexPath:indexPath];
-
     BWPhotoBrowserVC * photoBrowserVC = [[BWPhotoBrowserVC alloc]initWithImgList:self.imgDataSource selectedIndex:indexPath.item];
     [photoBrowserVC setInitializeBlock:^(BWTransitionManager *manager) {
         manager.stackInType = BWAnimationTransition_PhotoBrowserIn;
-        manager.stackOutType = BWAnimationTransition_FadeAndScale;
+        manager.stackOutType = BWAnimationTransition_PhotoBrowserOut;
         manager.transitionDuration_StackIn = 2.0;
         manager.transitionDuration_StackOut = 2.0;
         manager.photoBrowserImgView = collectionCell.imgView;
+        manager.photoListView = collectionView;
     }];
     [self.navigationController presentViewController:photoBrowserVC animated:YES completion:nil];
-    CGRect convertFrame =  [collectionCell.superview convertRect:collectionCell.frame toView:self.view];
-    NSLog(@"%@",NSStringFromCGRect(convertFrame));
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.imgDataSource.count;

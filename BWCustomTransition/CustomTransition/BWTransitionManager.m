@@ -12,6 +12,7 @@
 #import "BWTransitionManager+PageIn.h"
 #import "BWTransitionManager+PageOut.h"
 #import "BWTransitionManager+PhotoBrowserIn.h"
+#import "BWTransitionManager+PhotoBrowserOut.h"
 @interface BWTransitionManager()
 @end
 @implementation BWTransitionManager
@@ -36,8 +37,13 @@
             break;
         case BWAnimationTransition_PageOut:
             return [self generatePageOutAnimationWithDuration:duration];
+            break;
         case BWAnimationTransition_PhotoBrowserIn:
             return [self generatePhotoBrowserInAnimationWithDuration:duration];
+            break;
+        case BWAnimationTransition_PhotoBrowserOut:
+            return [self generatePhotoBrowserOutAnimationWithDuration:duration];
+            break;
         default:
             break;
     }

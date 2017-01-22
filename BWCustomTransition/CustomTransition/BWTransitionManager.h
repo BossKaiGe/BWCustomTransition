@@ -14,12 +14,14 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_FadeAndScale,
     BWAnimationTransition_PageIn,
     BWAnimationTransition_PageOut,
-    BWAnimationTransition_PhotoBrowserIn
+    BWAnimationTransition_PhotoBrowserIn,
+    BWAnimationTransition_PhotoBrowserOut
 };
 @interface BWTransitionManager : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
 @property(nonatomic,strong)UIView * fromView;
 @property(nonatomic,strong)UIView * toView;
 @property(nonatomic,strong)UIImageView * photoBrowserImgView;
+@property(nonatomic,strong)UICollectionView * photoListView;
 @property(nonatomic,assign)BWAnimationTransition stackInType;
 @property(nonatomic,assign)BWAnimationTransition stackOutType;
 @property(nonatomic,assign)BWAnimationTransition tabTransitionType;

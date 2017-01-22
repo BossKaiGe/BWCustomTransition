@@ -10,4 +10,6 @@
 
 @interface BWTransitionManager (PhotoBrowserIn)
 -(CustomAnimationBlock)generatePhotoBrowserInAnimationWithDuration:(CGFloat)duration;
+-(CGRect)getRect;
+-(CGRect)getFullRect;
 @end

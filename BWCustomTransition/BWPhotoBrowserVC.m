@@ -7,6 +7,9 @@
 //
 #import "BWPhotoBrowserVC.h"
 #import "BWPhotoBrowserView.h"
+#import "BWTransitionCollectionCell.h"
+#import "UIViewController+animationBlock.h"
+#import "BWTransitionManager.h"
 @interface BWPhotoBrowserVC ()
 @property (nonatomic,strong)NSArray * imageList;
 @property (nonatomic,strong)UIButton * rightBtn;
@@ -38,6 +41,7 @@
 
 -(void)rightBtnClick
 {
+    self.manager.photoBrowserImgView = [self currentImageView];
     [self dismissViewControllerAnimated:YES completion:^{
         NSLog(@"dismiss");
     }];
@@ -48,7 +52,6 @@
     NSIndexPath * indexPath = [NSIndexPath indexPathForItem:self.pageControl.currentPage inSection:0];
     [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:(UICollectionViewScrollPositionNone) animated:YES];
 }
-
 -(void)setUpUI
 {
     [self.view addSubview:self.collectionView];
@@ -106,5 +109,10 @@
     }
     return _pageControl;
 }
-
+-(UIImageView *)currentImageView
+{
+    NSIndexPath * currentIndexPath = [[self.collectionView indexPathsForVisibleItems]lastObject];
+    BWTransitionCollectionCell * cell = (BWTransitionCollectionCell *)[self.manager.photoListView cellForItemAtIndexPath:currentIndexPath];
+    return cell.imgView;
+}
 @end
