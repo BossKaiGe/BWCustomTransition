@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BWCustomTransition.h"
+#import "BWTransitionFoundation.h"
 @class BWTransitionManager;
 @interface UITabBarController (animationBlock)
 @property(nonatomic,strong)BWTransitionManager * manager;

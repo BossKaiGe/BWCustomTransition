@@ -9,6 +9,6 @@
 #import "BWTransitionManager.h"
 
 @interface BWTransitionManager (PageIn)
--(CustomAnimationBlock)generatePageInAnimationWithDuration:(CGFloat)duration;
 
+-(CustomAnimationBlock)generatePageInAnimationWithDuration:(CGFloat)duration;
 @end

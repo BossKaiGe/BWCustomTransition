@@ -8,7 +8,9 @@
 
 #import "BWTransitionManager+PageIn.h"
 
+
 @implementation BWTransitionManager (PageIn)
+
 -(CustomAnimationBlock)generatePageInAnimationWithDuration:(CGFloat)duration{
     return ^(id <UIViewControllerContextTransitioning> transitionContext){
         UIViewController* toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
@@ -29,7 +31,6 @@
             fromView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);
 //            shadow.alpha = 1.0;
         } completion:^(BOOL finished) {
-            //7
             fromView.layer.anchorPoint = CGPointMake(0.5, 0.5);
             fromView.layer.position    = CGPointMake(CGRectGetMidX([UIScreen mainScreen].bounds), CGRectGetMidY([UIScreen mainScreen].bounds));
             fromView.layer.transform = CATransform3DIdentity;
@@ -37,7 +38,5 @@
         }];
     };
 }
--(void)updateAnchorPointAndOffset:(CGPoint)anchorPoint view:(UIView *)view{
 
-}
 @end

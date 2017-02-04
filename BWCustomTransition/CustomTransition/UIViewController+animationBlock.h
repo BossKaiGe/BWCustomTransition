@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BWCustomTransition.h"
-@class BWTransitionManager;
+#import "BWTransitionFoundation.h"
 @interface UIViewController (animationBlock)
 @property(nonatomic,copy)InitializeBlock initializeBlock;
 @property(nonatomic,strong)BWTransitionManager * manager;
-
 -(void)setInitializeBlock:(InitializeBlock)initializeBlock;
 @end

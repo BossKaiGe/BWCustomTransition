@@ -7,8 +7,13 @@
 //
 
 #import "BWTransitionManager+PhotoBrowserIn.h"
+static NSString * const kPhotoBrowserImgView = @"kPhotoBrowserImgView";
+static NSString * const kPhotoListView = @"kPhotoListView";
 
 @implementation BWTransitionManager (PhotoBrowserIn)
+@dynamic photoBrowserImgView;
+@dynamic photoListView;
+
 -(CustomAnimationBlock)generatePhotoBrowserInAnimationWithDuration:(CGFloat)duration{
     BW_WeakSelf(ws);
     return ^(id <UIViewControllerContextTransitioning> transitionContext){
@@ -40,5 +45,17 @@
     }
     return CGRectMake(0, y, w, h);
 }
-
+#pragma mark:properties
+-(void)setPhotoListView:(UICollectionView *)photoListView{
+    objc_setAssociatedObject(self, (__bridge const void *)(kPhotoListView), photoListView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(UICollectionView *)photoListView{
+    return objc_getAssociatedObject(self, (__bridge const void *)(kPhotoListView));
+}
+-(void)setPhotoBrowserImgView:(UIImageView *)photoBrowserImgView{
+    objc_setAssociatedObject(self, (__bridge const void *)(kPhotoBrowserImgView), photoBrowserImgView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(UIImageView *)photoBrowserImgView{
+    return objc_getAssociatedObject(self, (__bridge const void *)(kPhotoBrowserImgView));
+}
 @end

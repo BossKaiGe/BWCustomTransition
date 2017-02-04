@@ -9,6 +9,8 @@
 #import "BWTransitionManager.h"
 
 @interface BWTransitionManager (PhotoBrowserIn)
+@property(nonatomic,strong)UIImageView * photoBrowserImgView;
+@property(nonatomic,strong)UICollectionView * photoListView;
 -(CustomAnimationBlock)generatePhotoBrowserInAnimationWithDuration:(CGFloat)duration;
 -(CGRect)getRect;
 -(CGRect)getFullRect;

@@ -10,5 +10,4 @@
 
 @interface BWTransitionManager (PageOut)
 -(CustomAnimationBlock)generatePageOutAnimationWithDuration:(CGFloat)duration;
-
 @end

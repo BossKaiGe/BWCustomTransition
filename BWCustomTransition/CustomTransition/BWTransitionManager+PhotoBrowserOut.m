@@ -37,8 +37,8 @@
         objc_property_t property = properties[i];
         const char* char_f =property_getName(property);
         NSString *key = [NSString stringWithUTF8String:char_f];
-        if (key == propertyName) {
-            id propertyValue = [self valueForKey:(NSString *)key];
+        if ([key isEqualToString: propertyName]) {
+            id propertyValue = [cell valueForKey:(NSString *)key];
             self.photoBrowserImgView = propertyValue;
         }
     }

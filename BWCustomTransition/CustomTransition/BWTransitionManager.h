@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "BWCustomTransition.h"
+#import "BWTransitionFoundation.h"
 typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_Custom,
     BWAnimationTransition_FadeAndScale,
@@ -18,10 +18,6 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_PhotoBrowserOut
 };
 @interface BWTransitionManager : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
-@property(nonatomic,strong)UIView * fromView;
-@property(nonatomic,strong)UIView * toView;
-@property(nonatomic,strong)UIImageView * photoBrowserImgView;
-@property(nonatomic,strong)UICollectionView * photoListView;
 @property(nonatomic,assign)BWAnimationTransition stackInType;
 @property(nonatomic,assign)BWAnimationTransition stackOutType;
 @property(nonatomic,assign)BWAnimationTransition tabTransitionType;

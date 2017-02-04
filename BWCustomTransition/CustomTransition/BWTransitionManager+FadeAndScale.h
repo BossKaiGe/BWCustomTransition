@@ -7,7 +7,7 @@
 //
 
 #import "BWTransitionManager.h"
-#import "BWCustomTransition.h"
+#import "BWTransitionFoundation.h"
 @interface BWTransitionManager (FadeAndScale)
 -(CustomAnimationBlock)generateFadeAndScaleAnimationWithDuration:(CGFloat)duration;
 @end

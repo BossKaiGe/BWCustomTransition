@@ -103,10 +103,13 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
 
     UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"cancel" style:(UIAlertActionStyleDefault) handler:nil];
     [alert addAction:fadeAndScaleAction];
-    [alert addAction:pageInAction];
-    [alert addAction:pageOutAction];
-    [alert addAction:photoBrowserInAction];
-    [alert addAction:photoBrowserOutAction];
+    if (transitionType == ChooseAnimationType_StackIn) {
+        [alert addAction:pageInAction];
+        [alert addAction:photoBrowserInAction];
+    }else{
+        [alert addAction:pageOutAction];
+        [alert addAction:photoBrowserOutAction];
+    }
     [alert addAction: cancelAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
