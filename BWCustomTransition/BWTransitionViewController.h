@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BWTransitionViewController : UIViewController
+@interface BWTransitionViewController : UITableViewController
 
 @end
