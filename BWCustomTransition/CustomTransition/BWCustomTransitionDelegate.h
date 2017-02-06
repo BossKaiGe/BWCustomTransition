@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface BWCustomTransitionDelegate : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
+@interface BWCustomTransitionDelegate : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
 +(instancetype)shareInstance;
 @end

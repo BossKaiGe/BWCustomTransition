@@ -12,8 +12,7 @@ typedef enum _CustomAnimationType{
     CustomAnimationType_Push = 0,
     CustomAnimationType_Pop,
     CustomAnimationType_Present,
-    CustomAnimationType_Dismiss,
-    CustomAnimationType_TabBar
+    CustomAnimationType_Dismiss
 }CustomAnimationType;
 @interface BWCustomAnimation : NSObject<UIViewControllerAnimatedTransitioning>
 -(instancetype)initWithAnimationType:(CustomAnimationType)animationType;

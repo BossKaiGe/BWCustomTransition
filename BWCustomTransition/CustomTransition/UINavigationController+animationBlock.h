@@ -10,8 +10,5 @@
 #import "BWTransitionManager.h"
 #import "BWTransitionManager.h"
 @interface UINavigationController (animationBlock)
-@property(nonatomic,copy)InitializeBlock initializeBlock;
 @property(nonatomic,strong)BWTransitionManager * manager;
--(void)resignTransition;
--(void)setInitializeBlock:(InitializeBlock)initializeBlock;
 @end

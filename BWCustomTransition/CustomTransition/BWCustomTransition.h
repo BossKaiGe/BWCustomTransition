@@ -15,5 +15,4 @@
 #import "BWTransitionManager+PageOut.h"
 #import "UINavigationController+animationBlock.h"
 #import "UIViewController+animationBlock.h"
-#import "UITabBarController+animationBlock.h"
 #endif /* BWCustomTransition_h */

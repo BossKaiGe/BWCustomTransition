@@ -11,26 +11,27 @@
 
 
 static NSString * const kTransitionManager = @"kTransitionManager";
-static NSString * const kInitializeBlock = @"kInitializeBlock";
 @implementation UINavigationController (animationBlock)
 @dynamic manager;
-@dynamic initializeBlock;
-
 #pragma mark:properties
--(void)resignTransition{
-    self.delegate = self.manager.originDelegate;
-    self.manager = nil;
++(void)load{
+    [self bw_swizzleMethod:@selector(bw_pushViewController:animated:) withClass:self withMethod:@selector(pushViewController:animated:) error:nil];
+    [self bw_swizzleMethod:@selector(bw_popViewControllerAnimated:) withClass:self withMethod:@selector(popViewControllerAnimated:) error:nil];
 }
--(InitializeBlock)initializeBlock{
-    return objc_getAssociatedObject(self, (__bridge const void *)(kInitializeBlock));
+-(void)bw_pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    if (viewController.manager) {
+        self.delegate = viewController.manager;
+    }
+    [self bw_pushViewController:viewController animated:animated];
 }
--(void)setInitializeBlock:(InitializeBlock)initializeBlock{
-    objc_setAssociatedObject(self, (__bridge const void *)(kInitializeBlock), initializeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
-    self.manager = [[BWTransitionManager alloc]init];
-    initializeBlock(self.manager);
-    [self.manager generateAnimation];
-    self.delegate = self.manager;
+-(UIViewController *)bw_popViewControllerAnimated:(BOOL)animated{
+    UIViewController * poppedController = [self bw_popViewControllerAnimated:animated];
+    if (poppedController.manager.originDelegate) {
+        self.delegate = poppedController.manager.originDelegate;
+    }
+    return poppedController;
 }
+#pragma mark:properties
 -(BWTransitionManager *)manager{
     return objc_getAssociatedObject(self, (__bridge const void *)(kTransitionManager));
 }

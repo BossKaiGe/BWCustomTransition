@@ -20,6 +20,7 @@ static NSString * const kTransitionManager = @"kTransitionManager";
 @dynamic manager;
 +(void)load{
     [self bw_swizzleMethod:@selector(bw_viewDidLoad) withClass:self withMethod:@selector(viewDidLoad) error:nil];
+    [self bw_swizzleMethod:@selector(bw_presentViewController:animated:completion:) withClass:self withMethod:@selector(presentViewController:animated:completion:) error:nil];
 }
 -(void)bw_viewDidLoad{
     [self bw_viewDidLoad];
@@ -32,6 +33,12 @@ static NSString * const kTransitionManager = @"kTransitionManager";
     [[BWCustomTransitionDelegate shareInstance] performSelector:@selector(handlePanGestureRecognizer: withController:) withObject:sender withObject:self];
 #pragma clang diagnostic pop
 }
+-(void)bw_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion{
+    if (viewControllerToPresent.manager) {
+        viewControllerToPresent.transitioningDelegate = viewControllerToPresent.manager;
+    }
+    [self bw_presentViewController:viewControllerToPresent animated:flag completion:completion];
+}
 
 #pragma mark:properties
 
@@ -43,7 +50,6 @@ static NSString * const kTransitionManager = @"kTransitionManager";
     self.manager = [[BWTransitionManager alloc]init];
     initializeBlock(self.manager);
     [self.manager generateAnimation];
-    self.transitioningDelegate = self.manager;
 }
 
 -(BWTransitionManager *)manager{

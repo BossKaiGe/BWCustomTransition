@@ -20,13 +20,10 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
 @interface BWTransitionManager : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
 @property(nonatomic,assign)BWAnimationTransition stackInType;
 @property(nonatomic,assign)BWAnimationTransition stackOutType;
-@property(nonatomic,assign)BWAnimationTransition tabTransitionType;
 @property(nonatomic,copy)CustomAnimationBlock stackInBlock;
 @property(nonatomic,copy)CustomAnimationBlock stackOutBlock;
-@property(nonatomic,copy)CustomAnimationBlock tabTransitionBlock;
 @property(nonatomic,assign)CGFloat transitionDuration_StackIn;
 @property(nonatomic,assign)CGFloat transitionDuration_StackOut;
-@property(nonatomic,assign)CGFloat transitionDuration_TabTransition;
 @property(nonatomic,weak)id originDelegate;
 -(UIImageView *)getTransitionImgView;
 -(void)generateAnimation;

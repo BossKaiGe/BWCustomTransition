@@ -8,7 +8,6 @@
 
 #import "BWCustomAnimation.h"
 #import "UINavigationController+animationBlock.h"
-#import "UITabBarController+animationBlock.h"
 #import "BWCustomTransitionDelegate.h"
 #import "UIViewController+animationBlock.h"
 @interface BWCustomAnimation()
@@ -39,8 +38,6 @@
         case CustomAnimationType_Dismiss:
             return fromVC.manager.transitionDuration_StackOut;
             break;
-        case CustomAnimationType_TabBar:
-            return fromVC.tabBarController.manager.transitionDuration_TabTransition;
         default:
             break;
     }
@@ -53,10 +50,10 @@
 
     switch (self.animationType) {
         case CustomAnimationType_Push:
-            fromVC.navigationController.manager.stackInBlock(transitionContext);
+            toVC.manager.stackInBlock(transitionContext);
             break;
         case CustomAnimationType_Pop:
-            fromVC.navigationController.manager.stackOutBlock(transitionContext);
+            fromVC.manager.stackOutBlock(transitionContext);
             break;
         case CustomAnimationType_Present:
             toVC.manager.stackInBlock(transitionContext);
@@ -64,8 +61,6 @@
         case CustomAnimationType_Dismiss:
             fromVC.manager.stackOutBlock(transitionContext);
             break;
-        case CustomAnimationType_TabBar:
-            fromVC.tabBarController.manager.tabTransitionBlock(transitionContext);
         default:
             break;
     }

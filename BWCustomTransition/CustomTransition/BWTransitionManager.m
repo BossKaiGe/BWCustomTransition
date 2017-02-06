@@ -23,9 +23,6 @@
     if (self.stackOutType != BWAnimationTransition_Custom) {
         [self setStackOutBlock:[self setAnimationWith:self.stackOutType duration:self.transitionDuration_StackOut]];
     }
-    if (self.tabTransitionType != BWAnimationTransition_Custom) {
-        [self setTabTransitionBlock:[self setAnimationWith:self.tabTransitionType duration:self.transitionDuration_TabTransition]];
-    }
 }
 -(CustomAnimationBlock)setAnimationWith:(BWAnimationTransition)type duration:(CGFloat)duration{
     switch (type) {
@@ -61,7 +58,9 @@
     }
 }
 -(BOOL)respondsToSelector:(SEL)aSelector{
-    if ([self.originDelegate respondsToSelector:aSelector] || [[BWCustomTransitionDelegate shareInstance]respondsToSelector:aSelector]) {
+    if ([self.originDelegate respondsToSelector:aSelector]) {
+        return YES;
+    }else if (self.stackInBlock && self.stackOutBlock && [[BWCustomTransitionDelegate shareInstance]respondsToSelector:aSelector]){
         return YES;
     }else{
         return [super respondsToSelector:aSelector];

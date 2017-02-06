@@ -15,7 +15,6 @@
 		8B01D84C1E2B3EA40062459A /* BWTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D83E1E2B3EA40062459A /* BWTransitionManager.m */; };
 		8B01D84D1E2B3EA40062459A /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8401E2B3EA40062459A /* NSObject+Swizzle.m */; };
 		8B01D84E1E2B3EA40062459A /* UINavigationController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8421E2B3EA40062459A /* UINavigationController+animationBlock.m */; };
-		8B01D84F1E2B3EA40062459A /* UITabBarController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8441E2B3EA40062459A /* UITabBarController+animationBlock.m */; };
 		8B01D8501E2B3EA40062459A /* UIViewController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8461E2B3EA40062459A /* UIViewController+animationBlock.m */; };
 		8B01D8531E2B56B20062459A /* BWImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8521E2B56B20062459A /* BWImgViewController.m */; };
 		8B66489C1E32E4BF005F4B8C /* BWTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */; };
@@ -49,8 +48,6 @@
 		8B01D8401E2B3EA40062459A /* NSObject+Swizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzle.m"; sourceTree = "<group>"; };
 		8B01D8411E2B3EA40062459A /* UINavigationController+animationBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+animationBlock.h"; sourceTree = "<group>"; };
 		8B01D8421E2B3EA40062459A /* UINavigationController+animationBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+animationBlock.m"; sourceTree = "<group>"; };
-		8B01D8431E2B3EA40062459A /* UITabBarController+animationBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITabBarController+animationBlock.h"; sourceTree = "<group>"; };
-		8B01D8441E2B3EA40062459A /* UITabBarController+animationBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITabBarController+animationBlock.m"; sourceTree = "<group>"; };
 		8B01D8451E2B3EA40062459A /* UIViewController+animationBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+animationBlock.h"; sourceTree = "<group>"; };
 		8B01D8461E2B3EA40062459A /* UIViewController+animationBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+animationBlock.m"; sourceTree = "<group>"; };
 		8B01D8511E2B56B20062459A /* BWImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWImgViewController.h; sourceTree = "<group>"; };
@@ -118,8 +115,6 @@
 				8B01D8401E2B3EA40062459A /* NSObject+Swizzle.m */,
 				8B01D8411E2B3EA40062459A /* UINavigationController+animationBlock.h */,
 				8B01D8421E2B3EA40062459A /* UINavigationController+animationBlock.m */,
-				8B01D8431E2B3EA40062459A /* UITabBarController+animationBlock.h */,
-				8B01D8441E2B3EA40062459A /* UITabBarController+animationBlock.m */,
 				8B01D8451E2B3EA40062459A /* UIViewController+animationBlock.h */,
 				8B01D8461E2B3EA40062459A /* UIViewController+animationBlock.m */,
 			);
@@ -248,7 +243,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8B01D84F1E2B3EA40062459A /* UITabBarController+animationBlock.m in Sources */,
 				8B01D84E1E2B3EA40062459A /* UINavigationController+animationBlock.m in Sources */,
 				8B01D8471E2B3EA40062459A /* BWCustomAnimation.m in Sources */,
 				8B6648A21E3324F4005F4B8C /* BWTransitionCollectionCell.m in Sources */,

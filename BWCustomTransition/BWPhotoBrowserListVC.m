@@ -34,7 +34,7 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
         manager.photoBrowserImgView = collectionCell.imgView;
         manager.photoListView = collectionView;
     }];
-    [self.navigationController presentViewController:photoBrowserVC animated:YES completion:nil];
+    [self presentViewController:photoBrowserVC animated:YES completion:nil];
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.imgDataSource.count;

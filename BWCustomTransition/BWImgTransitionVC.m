@@ -9,7 +9,7 @@
 #import "BWImgTransitionVC.h"
 #import "BWImgViewController.h"
 #import "BWCustomTransition.h"
-@interface BWImgTransitionVC ()
+@interface BWImgTransitionVC ()<UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImageView * bgImg;
 @property(nonatomic,strong)UITapGestureRecognizer * tapGesture;
 @end
@@ -23,21 +23,23 @@
     // Do any additional setup after loading the view.
 }
 
--(void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    [self.navigationController resignTransition];
-}
+
 
 -(void)tapGestureTapped{
     BW_WeakSelf(ws);
-    [self.navigationController setInitializeBlock:^(BWTransitionManager *manager) {
+    BWImgViewController * imgVC = [[BWImgViewController alloc]init];
+    [imgVC setInitializeBlock:^(BWTransitionManager *manager) {
         manager.stackInType = ws.stackInType;
         manager.stackOutType = ws.stackOutType;
         manager.transitionDuration_StackIn = 1.0;
         manager.transitionDuration_StackOut = 1.0;
         manager.originDelegate = ws;
     }];
-    [self.navigationController pushViewController:[[BWImgViewController alloc]init] animated:YES];
+    [self.navigationController pushViewController:imgVC animated:YES];
+}
+#pragma mark:UINavigationControllerDelegate
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
+    NSLog(@"%@",viewController);
 }
 #pragma mark:懒加载
 -(UIImageView *)bgImg{
