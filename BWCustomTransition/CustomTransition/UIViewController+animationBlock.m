@@ -24,8 +24,7 @@ static NSString * const kTransitionManager = @"kTransitionManager";
 }
 -(void)bw_viewDidLoad{
     [self bw_viewDidLoad];
-    UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureFired:)];
-    [self.view addGestureRecognizer:panGesture];
+   
 }
 -(void)panGestureFired:(UIPanGestureRecognizer *)sender{
 #pragma clang diagnostic push
@@ -49,6 +48,10 @@ static NSString * const kTransitionManager = @"kTransitionManager";
     objc_setAssociatedObject(self, (__bridge const void *)(kInitializeBlock), initializeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     self.manager = [[BWTransitionManager alloc]init];
     initializeBlock(self.manager);
+    if (self.manager.stackOutGesture != BWStackOutGesture_None) {
+        UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureFired:)];
+        [self.view addGestureRecognizer:panGesture];
+    }
     [self.manager generateAnimation];
 }
 

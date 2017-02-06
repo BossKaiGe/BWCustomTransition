@@ -33,6 +33,7 @@
         manager.stackOutType = ws.stackOutType;
         manager.transitionDuration_StackIn = 1.0;
         manager.transitionDuration_StackOut = 1.0;
+        manager.stackOutGesture = BWStackOutGesture_Down;
         manager.originDelegate = ws;
     }];
     [self.navigationController pushViewController:imgVC animated:YES];
