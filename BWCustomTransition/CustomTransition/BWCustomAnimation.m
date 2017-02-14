@@ -27,10 +27,10 @@
     UIViewController * toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
     switch (self.animationType) {
         case CustomAnimationType_Push:
-            return fromVC.navigationController.manager.transitionDuration_StackIn;
+            return toVC.manager.transitionDuration_StackIn;
             break;
         case CustomAnimationType_Pop:
-            return fromVC.navigationController.manager.transitionDuration_StackOut;
+            return fromVC.manager.transitionDuration_StackOut;
             break;
         case CustomAnimationType_Present:
             return toVC.manager.transitionDuration_StackIn;

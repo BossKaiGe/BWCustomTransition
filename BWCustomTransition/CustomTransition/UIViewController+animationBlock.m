@@ -14,24 +14,14 @@
 
 static NSString * const kInitializeBlock = @"kInitializeBlock";
 static NSString * const kTransitionManager = @"kTransitionManager";
-
+static NSString * const kInteractiveTransition = @"kInteractiveTransition";
 @implementation UIViewController (animationBlock)
 @dynamic initializeBlock;
 @dynamic manager;
 +(void)load{
-    [self bw_swizzleMethod:@selector(bw_viewDidLoad) withClass:self withMethod:@selector(viewDidLoad) error:nil];
     [self bw_swizzleMethod:@selector(bw_presentViewController:animated:completion:) withClass:self withMethod:@selector(presentViewController:animated:completion:) error:nil];
 }
--(void)bw_viewDidLoad{
-    [self bw_viewDidLoad];
-   
-}
--(void)panGestureFired:(UIPanGestureRecognizer *)sender{
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wundeclared-selector"
-    [[BWCustomTransitionDelegate shareInstance] performSelector:@selector(handlePanGestureRecognizer: withController:) withObject:sender withObject:self];
-#pragma clang diagnostic pop
-}
+
 -(void)bw_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion{
     if (viewControllerToPresent.manager) {
         viewControllerToPresent.transitioningDelegate = viewControllerToPresent.manager;
@@ -48,17 +38,21 @@ static NSString * const kTransitionManager = @"kTransitionManager";
     objc_setAssociatedObject(self, (__bridge const void *)(kInitializeBlock), initializeBlock, OBJC_ASSOCIATION_COPY_NONATOMIC);
     self.manager = [[BWTransitionManager alloc]init];
     initializeBlock(self.manager);
-    if (self.manager.stackOutGesture != BWStackOutGesture_None) {
-        UIPanGestureRecognizer * panGesture = [[UIPanGestureRecognizer alloc]initWithTarget:self action:@selector(panGestureFired:)];
-        [self.view addGestureRecognizer:panGesture];
+    if (self.manager.stackOutGesture != BWStackOutGesture_None) {        
+        self.interactiveTransition = [[BWPercentDrivenInteractiveTransition alloc]initWithTargetVC:self];
     }
     [self.manager generateAnimation];
 }
-
 -(BWTransitionManager *)manager{
     return objc_getAssociatedObject(self, (__bridge const void *)(kTransitionManager));
 }
 -(void)setManager:(BWTransitionManager *)manager{
     objc_setAssociatedObject(self, (__bridge const void *)(kTransitionManager), manager, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(void)setInteractiveTransition:(BWPercentDrivenInteractiveTransition *)interactiveTransition{
+    objc_setAssociatedObject(self, (__bridge const void *)(kInteractiveTransition), interactiveTransition, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+-(BWPercentDrivenInteractiveTransition *)interactiveTransition{
+    return objc_getAssociatedObject(self, (__bridge const void *)(kInteractiveTransition));
 }
 @end

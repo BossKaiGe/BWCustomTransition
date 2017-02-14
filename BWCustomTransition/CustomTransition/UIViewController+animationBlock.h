@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "BWTransitionFoundation.h"
+#import "BWPercentDrivenInteractiveTransition.h"
 @interface UIViewController (animationBlock)
 @property(nonatomic,copy)InitializeBlock initializeBlock;
 @property(nonatomic,strong)BWTransitionManager * manager;
+@property(nonatomic,strong)BWPercentDrivenInteractiveTransition * interactiveTransition;
 -(void)setInitializeBlock:(InitializeBlock)initializeBlock;
 @end

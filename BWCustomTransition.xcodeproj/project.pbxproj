@@ -17,6 +17,7 @@
 		8B01D84E1E2B3EA40062459A /* UINavigationController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8421E2B3EA40062459A /* UINavigationController+animationBlock.m */; };
 		8B01D8501E2B3EA40062459A /* UIViewController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8461E2B3EA40062459A /* UIViewController+animationBlock.m */; };
 		8B01D8531E2B56B20062459A /* BWImgViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B01D8521E2B56B20062459A /* BWImgViewController.m */; };
+		8B02288D1E4AA58200480DA8 /* BWPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B02288C1E4AA58200480DA8 /* BWPercentDrivenInteractiveTransition.m */; };
 		8B66489C1E32E4BF005F4B8C /* BWTransitionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B66489B1E32E4BF005F4B8C /* BWTransitionViewController.m */; };
 		8B6648A21E3324F4005F4B8C /* BWTransitionCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6648A11E3324F4005F4B8C /* BWTransitionCollectionCell.m */; };
 		8B6648AB1E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6648AA1E333E25005F4B8C /* BWTransitionManager+PhotoBrowserIn.m */; };
@@ -52,6 +53,8 @@
 		8B01D8461E2B3EA40062459A /* UIViewController+animationBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+animationBlock.m"; sourceTree = "<group>"; };
 		8B01D8511E2B56B20062459A /* BWImgViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWImgViewController.h; sourceTree = "<group>"; };
 		8B01D8521E2B56B20062459A /* BWImgViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWImgViewController.m; sourceTree = "<group>"; };
+		8B02288B1E4AA58200480DA8 /* BWPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		8B02288C1E4AA58200480DA8 /* BWPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
 		8B07A5781E36D57C0041F4D3 /* BWCustomTransition.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BWCustomTransition.h; sourceTree = "<group>"; };
 		8B07A5791E36D6970041F4D3 /* BWTransitionFoundation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BWTransitionFoundation.h; sourceTree = "<group>"; };
 		8B66489A1E32E4BF005F4B8C /* BWTransitionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTransitionViewController.h; sourceTree = "<group>"; };
@@ -95,6 +98,8 @@
 			children = (
 				8B01D8331E2B3EA40062459A /* BWCustomAnimation.h */,
 				8B01D8341E2B3EA40062459A /* BWCustomAnimation.m */,
+				8B02288B1E4AA58200480DA8 /* BWPercentDrivenInteractiveTransition.h */,
+				8B02288C1E4AA58200480DA8 /* BWPercentDrivenInteractiveTransition.m */,
 				8B01D8351E2B3EA40062459A /* BWCustomTransitionDelegate.h */,
 				8B01D8361E2B3EA40062459A /* BWCustomTransitionDelegate.m */,
 				8B01D8371E2B3EA40062459A /* BWTransitionManager+FadeAndScale.h */,
@@ -254,6 +259,7 @@
 				8BA6881E1E4561FD00A6E1A6 /* BWPhotoBrowserListVC.m in Sources */,
 				8B01D84A1E2B3EA40062459A /* BWTransitionManager+PageIn.m in Sources */,
 				8B01D8501E2B3EA40062459A /* UIViewController+animationBlock.m in Sources */,
+				8B02288D1E4AA58200480DA8 /* BWPercentDrivenInteractiveTransition.m in Sources */,
 				8B01D8531E2B56B20062459A /* BWImgViewController.m in Sources */,
 				8BA688211E4563D300A6E1A6 /* BWImgTransitionVC.m in Sources */,
 				8B6648B51E343721005F4B8C /* BWTransitionManager+PhotoBrowserOut.m in Sources */,

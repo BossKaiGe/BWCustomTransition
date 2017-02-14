@@ -15,12 +15,14 @@
         UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
         [[transitionContext containerView] addSubview:toViewController.view];
         toViewController.view.alpha = 0;
-        
+        CGAffineTransform transform = CGAffineTransformIdentity;
         [UIView animateWithDuration:duration animations:^{
-            fromViewController.view.transform = CGAffineTransformMakeScale(0.1, 0.1);
+            fromViewController.view.transform = CGAffineTransformScale(transform, .1, .3);
             toViewController.view.alpha = 1;
         } completion:^(BOOL finished) {
+
             fromViewController.view.transform = CGAffineTransformIdentity;
+
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
     };

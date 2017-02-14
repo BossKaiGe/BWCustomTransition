@@ -31,6 +31,7 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
         manager.stackOutType = BWAnimationTransition_PhotoBrowserOut;
         manager.transitionDuration_StackIn = 2.0;
         manager.transitionDuration_StackOut = 2.0;
+        manager.stackOutGesture = BWStackOutGesture_Down;
         manager.photoBrowserImgView = collectionCell.imgView;
         manager.photoListView = collectionView;
     }];

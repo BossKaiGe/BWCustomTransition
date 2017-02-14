@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@interface BWCustomTransitionDelegate : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate>
+#import "BWPercentDrivenInteractiveTransition.h"
+@interface BWCustomTransitionDelegate : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,BWPercentDrivenInteractiveTransitionDelegate>
 +(instancetype)shareInstance;
 @end

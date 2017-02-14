@@ -25,7 +25,7 @@ static NSString * const kTransitionManager = @"kTransitionManager";
     [self bw_pushViewController:viewController animated:animated];
 }
 -(UIViewController *)bw_popViewControllerAnimated:(BOOL)animated{
-    
+    NSLog(@"bw_popViewControllerAnimated");
     UIViewController * poppedController = [self bw_popViewControllerAnimated:animated];
     if (poppedController.manager.originDelegate) {
         self.delegate = poppedController.manager.originDelegate;
