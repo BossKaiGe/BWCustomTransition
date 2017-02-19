@@ -1,5 +1,5 @@
 //
-//  BWTransitionManager+PageOut.h
+//  BWTransitionManager+Page.h
 //  BWCustomTransition
 //
 //  Created by 静静静 on 17/1/8.
@@ -8,6 +8,9 @@
 
 #import "BWTransitionManager.h"
 
-@interface BWTransitionManager (PageOut)
+@interface BWTransitionManager (Page)
+
+-(CustomAnimationBlock)generatePageInAnimationWithDuration:(CGFloat)duration;
 -(CustomAnimationBlock)generatePageOutAnimationWithDuration:(CGFloat)duration;
+
 @end

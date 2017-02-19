@@ -8,9 +8,8 @@
 #import "BWPhotoBrowserVC.h"
 #import "BWPhotoBrowserView.h"
 #import "BWTransitionCollectionCell.h"
-#import "UIViewController+animationBlock.h"
-#import "BWTransitionManager.h"
-#import "BWTransitionManager+PhotoBrowserOut.h"
+
+#import "BWCustomTransition.h"
 @interface BWPhotoBrowserVC ()
 @property (nonatomic,strong)NSArray * imageList;
 @property (nonatomic,strong)UIButton * rightBtn;

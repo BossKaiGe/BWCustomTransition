@@ -1,5 +1,5 @@
 //
-//  BWTransitionManager+PhotoBrowserIn.h
+//  BWTransitionManager+PhotoBrowser.h
 //  BWCustomTransition
 //
 //  Created by 静静静 on 17/1/21.
@@ -8,10 +8,12 @@
 
 #import "BWTransitionManager.h"
 
-@interface BWTransitionManager (PhotoBrowserIn)
+@interface BWTransitionManager (PhotoBrowser)
 @property(nonatomic,strong)UIImageView * photoBrowserImgView;
 @property(nonatomic,strong)UICollectionView * photoListView;
 -(CustomAnimationBlock)generatePhotoBrowserInAnimationWithDuration:(CGFloat)duration;
+-(CustomAnimationBlock)generatePhotoBrowserOutAnimationWithDuration:(CGFloat)duration;
+-(void)upDataImgWithPhotoListIndexPath:(NSIndexPath *)indexPath photoPropertyNameInListCell:(NSString *)propertyName;
 -(CGRect)getRect;
 -(CGRect)getFullRect;
 @end

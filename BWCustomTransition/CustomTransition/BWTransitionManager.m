@@ -9,10 +9,9 @@
 #import "BWTransitionManager.h"
 #import "BWCustomTransitionDelegate.h"
 #import "BWTransitionManager+FadeAndScale.h"
-#import "BWTransitionManager+PageIn.h"
-#import "BWTransitionManager+PageOut.h"
-#import "BWTransitionManager+PhotoBrowserIn.h"
-#import "BWTransitionManager+PhotoBrowserOut.h"
+#import "BWTransitionManager+Page.h"
+#import "BWTransitionManager+PhotoBrowser.h"
+#import "BWTransitionManager+DotSpread.h"
 @interface BWTransitionManager()
 @end
 @implementation BWTransitionManager
@@ -40,6 +39,12 @@
             break;
         case BWAnimationTransition_PhotoBrowserOut:
             return [self generatePhotoBrowserOutAnimationWithDuration:duration];
+            break;
+        case BWAnimationTransition_DotSpreadIn:
+            return [self generateDotSpreadInAnimationWithDuration:duration];
+            break;
+        case BWAnimationTransition_DotSpreadOut:
+            return [self generateDotSpreadOutAnimationWithDuration:duration];
             break;
         default:
             break;

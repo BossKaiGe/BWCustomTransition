@@ -1,5 +1,5 @@
 //
-//  BWImgTransitionVC.h
+//  BWNormalFromViewController.h
 //  BWCustomTransition
 //
 //  Created by 静静静 on 17/2/4.
@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BWNormalFromViewController.h"
 #import "BWCustomTransition.h"
-@interface BWImgTransitionVC : UIViewController
+@interface BWNormalFromViewController : UIViewController
 @property(nonatomic,assign)BWAnimationTransition stackInType;
 @property(nonatomic,assign)BWAnimationTransition stackOutType;
 @end

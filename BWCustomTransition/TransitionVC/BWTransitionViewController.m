@@ -9,15 +9,16 @@
 #import "BWTransitionManager.h"
 #import "UINavigationController+animationBlock.h"
 #import "UIViewController+animationBlock.h"
-#import "BWImgViewController.h"
+#import "BWNormalToViewController.h"
 #import "BWTransitionCollectionCell.h"
 #import "BWPhotoBrowserVC.h"
-#import "BWImgTransitionVC.h"
+#import "BWNormalFromViewController.h"
 #import "BWPhotoBrowserListVC.h"
+#import "BWDotSpreadVC.h"
 static NSString * const kPhotoBrowserTransition = @"PhotoBrowser";
 static NSString * const kPageInPageOutTransition = @"PageInPageOut";
 static NSString * const kFadeAndScaleTransition = @"FadeAndScale";
-
+static NSString * const kDotSpreadTransition = @"DotSpreadTransition";
 @interface BWTransitionViewController ()
 @property(nonatomic,strong) NSArray * dataSource;
 @end
@@ -34,18 +35,21 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString * transitionType = self.dataSource[indexPath.row];
     if ([transitionType isEqualToString:kFadeAndScaleTransition]) {
-        BWImgTransitionVC * imgVC = [[BWImgTransitionVC alloc]init];
+        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_FadeAndScale;
         imgVC.stackOutType = BWAnimationTransition_FadeAndScale;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kPageInPageOutTransition]){
-        BWImgTransitionVC * imgVC = [[BWImgTransitionVC alloc]init];
+        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_PageIn;
         imgVC.stackOutType = BWAnimationTransition_PageOut;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kPhotoBrowserTransition]){
         BWPhotoBrowserListVC * listVC = [[BWPhotoBrowserListVC alloc]init];
         [self.navigationController pushViewController:listVC animated:YES];
+    }else if ([transitionType isEqualToString:kDotSpreadTransition]){
+        BWDotSpreadVC * dotSpreadVC = [[BWDotSpreadVC alloc]init];
+        [self.navigationController pushViewController:dotSpreadVC animated:YES];
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -59,7 +63,7 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
 #pragma mark:懒加载
 -(NSArray *)dataSource{
     if (_dataSource == nil) {
-        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition];
+        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition,kDotSpreadTransition];
     }
     return _dataSource;
 }

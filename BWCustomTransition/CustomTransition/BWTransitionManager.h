@@ -15,7 +15,9 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_PageIn,
     BWAnimationTransition_PageOut,
     BWAnimationTransition_PhotoBrowserIn,
-    BWAnimationTransition_PhotoBrowserOut
+    BWAnimationTransition_PhotoBrowserOut,
+    BWAnimationTransition_DotSpreadIn,
+    BWAnimationTransition_DotSpreadOut
 };
 typedef NS_ENUM(NSInteger, BWStackOutGesture) {
     BWStackOutGesture_None,

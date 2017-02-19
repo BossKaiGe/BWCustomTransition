@@ -29,6 +29,8 @@ static NSString * const kTransitionManager = @"kTransitionManager";
     UIViewController * poppedController = [self bw_popViewControllerAnimated:animated];
     if (poppedController.manager.originDelegate) {
         self.delegate = poppedController.manager.originDelegate;
+    }else{
+        self.delegate = nil;
     }
     return poppedController;
 }

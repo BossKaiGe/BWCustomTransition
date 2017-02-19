@@ -8,11 +8,10 @@
 #ifndef BWCustomTransition_h
 #define BWCustomTransition_h
 #import "BWTransitionManager.h"
-#import "BWTransitionManager+PhotoBrowserOut.h"
-#import "BWTransitionManager+PhotoBrowserIn.h"
+#import "BWTransitionManager+PhotoBrowser.h"
 #import "BWTransitionManager+FadeAndScale.h"
-#import "BWTransitionManager+PageIn.h"
-#import "BWTransitionManager+PageOut.h"
+#import "BWTransitionManager+Page.h"
 #import "UINavigationController+animationBlock.h"
 #import "UIViewController+animationBlock.h"
+#import "BWTransitionManager+DotSpread.h"
 #endif /* BWCustomTransition_h */

@@ -13,6 +13,8 @@
 @property(nonatomic,strong)UINavigationController * targetNavC;
 @property(nonatomic,strong)UIViewController * targetVC;
 @property(nonatomic,strong)UIPanGestureRecognizer * panGesture;
+@property(nonatomic,strong)id <UIViewControllerContextTransitioning> transitionContext;
+@property(nonatomic,strong)CADisplayLink * displayLink;
 @end
 @implementation BWPercentDrivenInteractiveTransition
 -(instancetype)initWithTargetVC:(UIViewController *)targetVC{
@@ -24,9 +26,56 @@
     }
     return self;
 }
--(void)cancelInteractiveTransition{
-    self.targetNavC.delegate = self.targetVC.manager;
+- (void)startInteractiveTransition:(id<UIViewControllerContextTransitioning>)transitionContext {
+    [super startInteractiveTransition:transitionContext];
+    CALayer *containerLayer = [transitionContext containerView].layer;
+    containerLayer.beginTime = [containerLayer convertTime:CACurrentMediaTime() fromLayer:nil] - self.duration;
+    self.transitionContext = transitionContext;
+}
+
+- (void)finishInteractiveTransition {
+    [super finishInteractiveTransition];
+    CALayer *containerLayer = [_transitionContext containerView].layer;
+    CFTimeInterval pausedTime = [containerLayer timeOffset];
+    containerLayer.speed = 1.0;
+    containerLayer.timeOffset = 0.0;
+    containerLayer.beginTime = 0.0;
+    containerLayer.beginTime = [containerLayer convertTime:CACurrentMediaTime() fromLayer:nil] - pausedTime;
+}
+
+- (void)cancelInteractiveTransition {
     [super cancelInteractiveTransition];
+
+    self.targetNavC.delegate = self.targetVC.manager;
+//    UIView * fromView = [self.transitionContext viewForKey:UITransitionContextFromViewKey];
+
+    CALayer *maskLayer=[self.transitionContext containerView].layer;
+    maskLayer.speed = -1;
+    maskLayer.beginTime = CACurrentMediaTime();
+    //    UIView * fromView = [self.transitionContext viewForKey:UITransitionContextFromViewKey];
+
+//    containerLayer.timeOffset = 0.0;
+//    containerLayer.beginTime = 0.0;
+//
+//    if (!_displayLink) {
+//    cont
+//       CADisplayLink *  displayLink=[CADisplayLink displayLinkWithTarget:self selector:@selector(animationTick:)];
+//        [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+//    }
+}
+-(void)animationTick:(CADisplayLink *)displayLink{
+    
+    CALayer *maskLayer=[self.transitionContext containerView].layer;
+    CGFloat timeOffset=maskLayer.timeOffset;
+    timeOffset=MAX(0,timeOffset- (1.0/60.0));
+    maskLayer.timeOffset=timeOffset;
+    if (timeOffset==0) {
+        displayLink.paused=YES;
+        [super cancelInteractiveTransition];
+    }
+}
+-(void)dealloc{
+    NSLog(@"dealloc");
 }
 -(void)panGestureFired:(UIPanGestureRecognizer *)gesture{
    

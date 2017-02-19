@@ -1,20 +1,20 @@
 //
-//  BWImgTransitionVC.m
+//  BWNormalFromViewController.m
 //  BWCustomTransition
 //
 //  Created by 静静静 on 17/2/4.
 //  Copyright © 2017年 BossKai. All rights reserved.
 //
 
-#import "BWImgTransitionVC.h"
-#import "BWImgViewController.h"
+#import "BWNormalFromViewController.h"
+#import "BWNormalToViewController.h"
 #import "BWCustomTransition.h"
-@interface BWImgTransitionVC ()<UINavigationControllerDelegate>
+@interface BWNormalFromViewController ()<UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImageView * bgImg;
 @property(nonatomic,strong)UITapGestureRecognizer * tapGesture;
 @end
 
-@implementation BWImgTransitionVC
+@implementation BWNormalFromViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -23,17 +23,16 @@
     // Do any additional setup after loading the view.
 }
 
-
-
 -(void)tapGestureTapped{
     BW_WeakSelf(ws);
-    BWImgViewController * imgVC = [[BWImgViewController alloc]init];
+    BWNormalToViewController * imgVC = [[BWNormalToViewController alloc]init];
+    [imgVC setTipsWith:@"点我或右滑"];
     [imgVC setInitializeBlock:^(BWTransitionManager *manager) {
         manager.stackInType = ws.stackInType;
         manager.stackOutType = ws.stackOutType;
         manager.transitionDuration_StackIn = 1.0;
         manager.transitionDuration_StackOut = 1.0;
-        manager.stackOutGesture = BWStackOutGesture_Down;
+        manager.stackOutGesture = BWStackOutGesture_Right;
         manager.originDelegate = ws;
     }];
     [self.navigationController pushViewController:imgVC animated:YES];

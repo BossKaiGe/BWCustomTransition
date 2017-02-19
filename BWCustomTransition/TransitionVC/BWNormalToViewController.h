@@ -1,5 +1,5 @@
 //
-//  BWImgViewController.h
+//  BWNormalToViewController.h
 //  BWCustomTransition
 //
 //  Created by 静静静 on 17/1/15.
@@ -8,5 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BWImgViewController : UIViewController
+@interface BWNormalToViewController : UIViewController
+-(void)setTipsWith:(NSString  *)tips;
 @end
