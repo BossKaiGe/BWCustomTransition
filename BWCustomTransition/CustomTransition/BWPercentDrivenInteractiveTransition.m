@@ -44,24 +44,11 @@
 }
 
 - (void)cancelInteractiveTransition {
-    [super cancelInteractiveTransition];
 
     self.targetNavC.delegate = self.targetVC.manager;
-//    UIView * fromView = [self.transitionContext viewForKey:UITransitionContextFromViewKey];
 
-    CALayer *maskLayer=[self.transitionContext containerView].layer;
-    maskLayer.speed = -1;
-    maskLayer.beginTime = CACurrentMediaTime();
-    //    UIView * fromView = [self.transitionContext viewForKey:UITransitionContextFromViewKey];
-
-//    containerLayer.timeOffset = 0.0;
-//    containerLayer.beginTime = 0.0;
-//
-//    if (!_displayLink) {
-//    cont
-//       CADisplayLink *  displayLink=[CADisplayLink displayLinkWithTarget:self selector:@selector(animationTick:)];
-//        [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
-//    }
+    CADisplayLink *  displayLink=[CADisplayLink displayLinkWithTarget:self selector:@selector(animationTick:)];
+    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 -(void)animationTick:(CADisplayLink *)displayLink{
     
