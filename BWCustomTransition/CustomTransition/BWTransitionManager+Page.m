@@ -7,8 +7,10 @@
 //
 
 #import "BWTransitionManager+Page.h"
+#import <GLKit/GLKit.h>
 
-
+#define LIGHT_DIRECTION 0, 1, -0.5
+#define AMBIENT_LIGHT 0.5
 @implementation BWTransitionManager (Page)
 
 -(CustomAnimationBlock)generatePageInAnimationWithDuration:(CGFloat)duration{
@@ -24,9 +26,7 @@
         CATransform3D transform = CATransform3DIdentity;
         transform.m34 = -0.002;
         containerView.layer.sublayerTransform = transform;
-        fromView.layer.anchorPoint = CGPointMake(0.0, 0.5);
-        fromView.layer.position    = CGPointMake(0, CGRectGetMidY([UIScreen mainScreen].bounds));
-        
+        [fromView bw_setAnchorPointTo:CGPointMake(0.0, 0.5)];
         
         CAGradientLayer *gradient = [CAGradientLayer layer];
         gradient.frame = fromView.bounds;
@@ -56,6 +56,7 @@
     };
 }
 -(CustomAnimationBlock)generatePageOutAnimationWithDuration:(CGFloat)duration{
+    BW_WeakSelf(ws);
     return ^(id <UIViewControllerContextTransitioning> transitionContext){
         UIViewController* toVC = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
         UIView *toView = toVC.view;
@@ -66,8 +67,8 @@
         transform.m34 = -0.002;
         containerView.layer.sublayerTransform = transform;
         toView.alpha = 1;
-        toView.layer.anchorPoint = CGPointMake(0.0, 0.5);
-        toView.layer.position    = CGPointMake(0, CGRectGetMidY([UIScreen mainScreen].bounds));
+        [toView bw_setAnchorPointTo:CGPointMake(0.0, 0.5)];
+
         toView.layer.transform = CATransform3DMakeRotation(-M_PI_2, 0, 1.0, 0);
         
         CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -79,11 +80,12 @@
         UIView *shadow = [[UIView alloc]initWithFrame:toView.bounds];
         shadow.backgroundColor = [UIColor clearColor];
         [shadow.layer insertSublayer:gradient atIndex:1];
-        shadow.alpha = 0.0;
+        shadow.alpha = 1.0;
         [toView addSubview:shadow];
         [UIView animateWithDuration:duration delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
             toView.layer.transform = CATransform3DMakeRotation(0, 0, 1.0, 0);
-            shadow.alpha = 1.0;
+            [ws applyLightingToFace:toView.layer];
+            shadow.alpha = 0.0;
         } completion:^(BOOL finished) {
             //7
             toView.layer.transform = CATransform3DIdentity;
@@ -94,6 +96,30 @@
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
     };
+}
+- (void)applyLightingToFace:(CALayer *)face
+{
+    //add lighting layer
+    CALayer *layer = [CALayer layer];
+    layer.frame = face.bounds;
+    [face addSublayer:layer];
+    //convert the face transform to matrix
+    //(GLKMatrix4 has the same structure as CATransform3D)
+    //译者注：GLKMatrix4和CATransform3D内存结构一致，但坐标类型有长度区别，所以理论上应该做一次float到CGFloat的转换，感谢[@zihuyishi](https://github.com/zihuyishi)同学~
+    CATransform3D transform = face.transform;
+    GLKMatrix4 matrix4 = *(GLKMatrix4 *)&transform;
+    GLKMatrix3 matrix3 = GLKMatrix4GetMatrix3(matrix4);
+    //get face normal
+    GLKVector3 normal = GLKVector3Make(0, 0, 1);
+    normal = GLKMatrix3MultiplyVector3(matrix3, normal);
+    normal = GLKVector3Normalize(normal);
+    //get dot product with light direction
+    GLKVector3 light = GLKVector3Normalize(GLKVector3Make(LIGHT_DIRECTION));
+    float dotProduct = GLKVector3DotProduct(light, normal);
+    //set lighting layer opacity
+    CGFloat shadow = 1 + dotProduct - AMBIENT_LIGHT;
+    UIColor *color = [UIColor colorWithWhite:0 alpha:shadow];
+    layer.backgroundColor = color.CGColor;
 }
 
 @end

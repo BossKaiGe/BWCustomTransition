@@ -12,6 +12,7 @@
 #import "BWTransitionManager+Page.h"
 #import "BWTransitionManager+PhotoBrowser.h"
 #import "BWTransitionManager+DotSpread.h"
+#import "BWTransitionManager+Mid_page.h"
 @interface BWTransitionManager()
 @end
 @implementation BWTransitionManager
@@ -45,6 +46,18 @@
             break;
         case BWAnimationTransition_DotSpreadOut:
             return [self generateDotSpreadOutAnimationWithDuration:duration];
+            break;
+        case BWAnimationTransition_Mid_page_Down:
+            return [self generateMid_pageAnimationWithDuration:duration withOrientation:(BWMid_pageOrientation_Down)];
+            break;
+        case BWAnimationTransition_Mid_page_Up:
+            return [self generateMid_pageAnimationWithDuration:duration withOrientation:(BWMid_pageOrientation_up)];
+            break;
+        case BWAnimationTransition_Mid_page_Left:
+            return [self generateMid_pageAnimationWithDuration:duration withOrientation:(BWMid_pageOrientation_left)];
+            break;
+        case BWAnimationTransition_Mid_page_Right:
+            return [self generateMid_pageAnimationWithDuration:duration withOrientation:(BWMid_pageOrientation_right)];
             break;
         default:
             break;

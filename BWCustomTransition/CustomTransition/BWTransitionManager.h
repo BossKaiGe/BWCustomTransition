@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "BWTransitionFoundation.h"
+#import "UIView+AnchorPoint.h"
 typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_Custom,
     BWAnimationTransition_FadeAndScale,
@@ -17,7 +18,12 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_PhotoBrowserIn,
     BWAnimationTransition_PhotoBrowserOut,
     BWAnimationTransition_DotSpreadIn,
-    BWAnimationTransition_DotSpreadOut
+    BWAnimationTransition_DotSpreadOut,
+    BWAnimationTransition_Mid_page_Left,
+    BWAnimationTransition_Mid_page_Right,
+    BWAnimationTransition_Mid_page_Up,
+    BWAnimationTransition_Mid_page_Down,
+
 };
 typedef NS_ENUM(NSInteger, BWStackOutGesture) {
     BWStackOutGesture_None,
