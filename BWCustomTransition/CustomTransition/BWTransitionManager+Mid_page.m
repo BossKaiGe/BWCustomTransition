@@ -11,7 +11,7 @@
 @implementation BWTransitionManager (Mid_page)
 -(CustomAnimationBlock)generateMid_pageAnimationWithDuration:(CGFloat)duration withOrientation:(BWMid_pageOrientation)orientation{
     BW_WeakSelf(ws);
-    return ^(id <UIViewControllerContextTransitioning> transitionContext){
+       return ^(id <UIViewControllerContextTransitioning> transitionContext){
         UIView * fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
         UIView * toView = [transitionContext viewForKey:UITransitionContextToViewKey];
         UIView * containerView = [transitionContext containerView];
@@ -21,7 +21,9 @@
         transform.m34 = -0.002;
         containerView.layer.sublayerTransform = transform;
         NSArray * toSnapShotView = [ws snapShotViewFor:toView withOrientation:orientation];
+
         NSArray * fromSnapShotView = [ws snapShotViewFor:fromView withOrientation:orientation];
+
         UIView *  fromAnimationView;
         UIView *  toAniamtionView;
         CGFloat rotation_Angle;
@@ -51,20 +53,7 @@
   
     };
 }
-//-(UIView * )getShadowView{
-//    CAGradientLayer *gradient = [CAGradientLayer layer];
-//    gradient.frame = toView.bounds;
-//    gradient.colors = @[(id)[UIColor colorWithWhite:0.0 alpha:0.5].CGColor,
-//                        (id)[UIColor colorWithWhite:0.0 alpha:0.0].CGColor];
-//    gradient.startPoint = CGPointMake(0.0, 0.5);
-//    gradient.endPoint = CGPointMake(0.8, 0.5);
-//    UIView *shadow = [[UIView alloc]initWithFrame:toView.bounds];
-//    shadow.backgroundColor = [UIColor clearColor];
-//    [shadow.layer insertSublayer:gradient atIndex:1];
-//    shadow.alpha = 1.0;
-//    [toView addSubview:shadow];
-//}
-//-(CGFloat)rotationAngleWith
+
 -(void)configurationRotation_Angle:(CGFloat *)angle rotation_x:(CGFloat *)rotation_x rotation_y:(CGFloat *)rotation_y fromAnimationView:(UIView **)fromAnimationView toAniamtionView:(UIView **)toAniamtionView withFromSnapShotView:(NSArray *)fromSnapShotView withToSnapShotView:(NSArray *)toSnapShotView andOrientation:(BWMid_pageOrientation)orientation{
     if (orientation == BWMid_pageOrientation_right || orientation == BWMid_pageOrientation_up) {
         *fromAnimationView = fromSnapShotView[0];
@@ -117,9 +106,7 @@
         toShadowView.backgroundColor = [UIColor clearColor];
     [toShadowView.layer insertSublayer:toAnimationGradient atIndex:1];
     toShadowView.alpha = 1.0;
-    [*toAniamtionView addSubview:toShadowView];
-//
-//    
+    [*toAniamtionView addSubview:toShadowView];   
     CAGradientLayer *fromAnimationGradient = [CAGradientLayer layer];
     fromAnimationGradient.frame = [*fromAnimationView bounds];
     fromAnimationGradient.colors = @[(id)[UIColor colorWithWhite:0.0 alpha:0.5].CGColor,
@@ -132,7 +119,90 @@
     fromShadowView.alpha = 0.0;
     [*fromAnimationView addSubview:fromShadowView];
 }
+-(CustomAnimationBlock)generateMid_OpenDoorAnimationWidthDuration:(CGFloat)duration withOrientation:(BWMid_pageOrientation)orientation{
+    BW_WeakSelf(ws);
+    return ^(id <UIViewControllerContextTransitioning> transitionContext){
+        UIView * fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+        UIView * toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+        UIView * containerView = [transitionContext containerView];
+        [containerView addSubview:toView];
+        CATransform3D transform = CATransform3DIdentity;
+        transform.m34 = -0.002;
+        containerView.layer.sublayerTransform = transform;
+        toView.layer.transform = CATransform3DMakeScale(0.8, 0.8, 1);
 
+        NSArray * fromSnapShotView = [ws snapShotViewFor:fromView withOrientation:orientation];
+        [fromView removeFromSuperview];
+        UIImageView * pageOne = fromSnapShotView[0];
+        UIImageView * pageTwo = fromSnapShotView[1];
+        
+        [UIView animateWithDuration:duration animations:^{
+            if (orientation == BWMid_pageOrientation_left || orientation == BWMid_pageOrientation_right) {
+                pageOne.frame = CGRectOffset(pageOne.frame, -pageOne.frame.size.width, 0);
+                pageTwo.frame = CGRectOffset(pageTwo.frame, pageTwo.frame.size.width, 0);
+            }else{
+                pageOne.frame = CGRectOffset(pageOne.frame, 0, -pageOne.frame.size.height);
+                pageTwo.frame = CGRectOffset(pageTwo.frame, 0, pageTwo.frame.size.height);
+            }
+            toView.layer.transform = CATransform3DMakeScale(1, 1, 1);
+        } completion:^(BOOL finished) {
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            if ([transitionContext transitionWasCancelled]) {
+                [containerView addSubview:fromView];
+                [toView removeFromSuperview];
+            }
+            [pageOne removeFromSuperview];
+            [pageTwo removeFromSuperview];
+        }];
+    };
+
+}
+-(CustomAnimationBlock)generateMid_CloseDoorAnimationWidthDuration:(CGFloat)duration withOrientation:(BWMid_pageOrientation)orientation{
+    BW_WeakSelf(ws);
+    return ^(id <UIViewControllerContextTransitioning> transitionContext){
+        UIView * fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
+        UIView * toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+        UIView * containerView = [transitionContext containerView];
+        [containerView addSubview:toView];
+        [containerView sendSubviewToBack:toView];
+        CATransform3D transform = CATransform3DIdentity;
+        transform.m34 = -0.002;
+        containerView.layer.sublayerTransform = transform;
+        fromView.layer.transform = CATransform3DIdentity;
+        NSArray * toSnapShotView = [ws snapShotViewFor:toView withOrientation:orientation];
+        UIImageView * pageOne = toSnapShotView[0];
+        UIImageView * pageTwo = toSnapShotView[1];
+        if (orientation == BWMid_pageOrientation_left || orientation == BWMid_pageOrientation_right) {
+            pageOne.frame = CGRectOffset(pageOne.frame, -pageOne.frame.size.width, 0);
+            pageTwo.frame = CGRectOffset(pageTwo.frame, pageTwo.frame.size.width, 0);
+        }else{
+            pageOne.frame = CGRectOffset(pageOne.frame, 0, -pageOne.frame.size.height);
+            pageTwo.frame = CGRectOffset(pageTwo.frame, 0, pageTwo.frame.size.height);
+        }
+        toView.alpha = 0;
+        [UIView animateWithDuration:duration animations:^{
+            if (orientation == BWMid_pageOrientation_left || orientation == BWMid_pageOrientation_right) {
+                pageOne.frame = CGRectOffset(pageOne.frame, pageOne.frame.size.width, 0);
+                pageTwo.frame = CGRectOffset(pageTwo.frame, -pageTwo.frame.size.width, 0);
+            }else{
+                pageOne.frame = CGRectOffset(pageOne.frame, 0, pageOne.frame.size.height);
+                pageTwo.frame = CGRectOffset(pageTwo.frame, 0, -pageTwo.frame.size.height);
+            }
+            fromView.layer.transform = CATransform3DMakeScale(0.8, 0.8, 1);
+        } completion:^(BOOL finished) {
+            toView.alpha = 1;
+            if ([transitionContext transitionWasCancelled]) {
+                [toView removeFromSuperview];
+            }else{
+                [fromView removeFromSuperview];
+            }
+            [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            [pageOne removeFromSuperview];
+            [pageTwo removeFromSuperview];
+        }];
+
+    };
+}
 -(NSArray *)snapShotViewFor:(UIView *)view withOrientation:(BWMid_pageOrientation)orientation{
     UIView * containerView = view.superview;
     CGSize size = view.bounds.size;

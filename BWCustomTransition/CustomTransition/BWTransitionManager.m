@@ -59,6 +59,18 @@
         case BWAnimationTransition_Mid_page_Right:
             return [self generateMid_pageAnimationWithDuration:duration withOrientation:(BWMid_pageOrientation_right)];
             break;
+        case BWAnimationTransition_Mid_openDoor_Vertical:
+            return [self generateMid_OpenDoorAnimationWidthDuration:duration withOrientation:BWMid_pageOrientation_up];
+            break;
+        case BWAnimationTransition_Mid_openDoor_Horizontal:
+            return [self generateMid_OpenDoorAnimationWidthDuration:duration withOrientation:BWMid_pageOrientation_left];
+            break;
+        case BWAnimationTransition_Mid_closeDoor_Vertical:
+            return [self generateMid_CloseDoorAnimationWidthDuration:duration withOrientation:BWMid_pageOrientation_up];
+            break;
+        case BWAnimationTransition_Mid_closeDoor_Horizontal:
+            return [self generateMid_CloseDoorAnimationWidthDuration:duration withOrientation:BWMid_pageOrientation_left];
+            break;
         default:
             break;
     }

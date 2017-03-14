@@ -12,8 +12,6 @@
 @class BWTransitionManager;
 #define BW_WeakSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 typedef void (^CustomAnimationBlock)( id <UIViewControllerContextTransitioning> transitionContext);
-typedef void (^customTabBarAnimationBlock)( UITabBarController * tabBarVC,UIViewController * fromVC,UIViewController * toVC);
-typedef void (^CustomGestureBlock)(UIPanGestureRecognizer* recognizer);
 typedef void (^InitializeBlock) (BWTransitionManager * manager);
 
 #endif /* BWTransitionFoundation_h */

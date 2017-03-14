@@ -35,7 +35,7 @@
         manager.stackOutGesture = BWStackOutGesture_Right;
         manager.originDelegate = ws;
     }];
-    [self.navigationController pushViewController:imgVC animated:YES];
+    [self.navigationController presentViewController:imgVC animated:YES completion:nil];
 }
 #pragma mark:UINavigationControllerDelegate
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{

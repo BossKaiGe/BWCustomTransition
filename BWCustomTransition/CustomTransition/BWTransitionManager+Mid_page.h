@@ -15,5 +15,6 @@ typedef NS_ENUM(NSInteger, BWMid_pageOrientation) {
 };
 @interface BWTransitionManager (Mid_page)
 -(CustomAnimationBlock)generateMid_pageAnimationWithDuration:(CGFloat)duration withOrientation:(BWMid_pageOrientation)orientation;
-
+-(CustomAnimationBlock)generateMid_OpenDoorAnimationWidthDuration:(CGFloat)duration withOrientation:(BWMid_pageOrientation)orientation;
+-(CustomAnimationBlock)generateMid_CloseDoorAnimationWidthDuration:(CGFloat)duration withOrientation:(BWMid_pageOrientation)orientation;
 @end

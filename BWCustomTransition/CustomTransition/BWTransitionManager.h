@@ -23,7 +23,10 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_Mid_page_Right,
     BWAnimationTransition_Mid_page_Up,
     BWAnimationTransition_Mid_page_Down,
-
+    BWAnimationTransition_Mid_openDoor_Horizontal,
+    BWAnimationTransition_Mid_openDoor_Vertical,
+    BWAnimationTransition_Mid_closeDoor_Horizontal,
+    BWAnimationTransition_Mid_closeDoor_Vertical
 };
 typedef NS_ENUM(NSInteger, BWStackOutGesture) {
     BWStackOutGesture_None,
