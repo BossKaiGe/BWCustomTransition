@@ -13,6 +13,7 @@
 #import "BWTransitionManager+PhotoBrowser.h"
 #import "BWTransitionManager+DotSpread.h"
 #import "BWTransitionManager+Mid_page.h"
+#import "BWTransitionManager+Scanning.h"
 @interface BWTransitionManager()
 @end
 @implementation BWTransitionManager
@@ -70,6 +71,18 @@
             break;
         case BWAnimationTransition_Mid_closeDoor_Horizontal:
             return [self generateMid_CloseDoorAnimationWidthDuration:duration withOrientation:BWMid_pageOrientation_left];
+            break;
+        case BWAnimationTransition_Scanning_Up:
+            return [self generateScanningAnimationWithDuration:duration withOrientation:BWScanningOrientation_up];
+            break;
+        case BWAnimationTransition_Scanning_Down:
+            return [self generateScanningAnimationWithDuration:duration withOrientation:BWScanningOrientation_down];
+            break;
+        case BWAnimationTransition_Scanning_Left:
+            return [self generateScanningAnimationWithDuration:duration withOrientation:BWScanningOrientation_left];
+            break;
+        case BWAnimationTransition_Scanning_Right:
+            return [self generateScanningAnimationWithDuration:duration withOrientation:BWScanningOrientation_right];
             break;
         default:
             break;
