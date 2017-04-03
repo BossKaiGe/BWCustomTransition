@@ -14,6 +14,7 @@
 #import "BWTransitionManager+DotSpread.h"
 #import "BWTransitionManager+Mid_page.h"
 #import "BWTransitionManager+Scanning.h"
+#import "BWTransitionManager+Fold.h"
 @interface BWTransitionManager()
 @end
 @implementation BWTransitionManager
@@ -83,6 +84,12 @@
             break;
         case BWAnimationTransition_Scanning_Right:
             return [self generateScanningAnimationWithDuration:duration withOrientation:BWScanningOrientation_right];
+            break;
+        case BWAnimationTransition_Fold_Left:
+            return [self generateFoldAnimationWithDuration:duration withOrientation:BWFlodOrientation_left];
+            break;
+        case BWAnimationTransition_Fold_Right:
+            return [self generateFoldAnimationWithDuration:duration withOrientation:BWFlodOrientation_right];
             break;
         default:
             break;

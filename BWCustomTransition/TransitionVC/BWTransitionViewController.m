@@ -22,6 +22,7 @@ static NSString * const kDotSpreadTransition = @"DotSpreadTransition";
 static NSString * const kMidPageTransition = @"MidPageTransition";
 static NSString * const kMidOpenDoorTransition = @"MidOpenDoorTransition";
 static NSString * const kScanningTransition = @"ScanningTransition";
+static NSString * const kFoldTransition = @"FoldTransition";
 @interface BWTransitionViewController ()
 @property(nonatomic,strong) NSArray * dataSource;
 @end
@@ -68,6 +69,11 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
         imgVC.stackInType = BWAnimationTransition_Scanning_Right;
         imgVC.stackOutType = BWAnimationTransition_Scanning_Left;
         [self.navigationController pushViewController:imgVC animated:YES];
+    }else if ([transitionType isEqualToString:kFoldTransition]){
+        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
+        imgVC.stackInType = BWAnimationTransition_Fold_Left;
+        imgVC.stackOutType = BWAnimationTransition_Fold_Right;
+        [self.navigationController pushViewController:imgVC animated:YES];
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -81,7 +87,7 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
 #pragma mark:懒加载
 -(NSArray *)dataSource{
     if (_dataSource == nil) {
-        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition,kDotSpreadTransition,kMidPageTransition,kMidOpenDoorTransition,kScanningTransition];
+        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition,kDotSpreadTransition,kMidPageTransition,kMidOpenDoorTransition,kScanningTransition,kFoldTransition];
     }
     return _dataSource;
 }

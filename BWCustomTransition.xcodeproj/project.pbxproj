@@ -20,6 +20,7 @@
 		8B0713EB1E7CBC890057FB96 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B0713E81E7CBC890057FB96 /* line.png */; };
 		8B0713EC1E7CBC890057FB96 /* mask.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8B0713E91E7CBC890057FB96 /* mask.jpg */; };
 		8B0713ED1E7CBC890057FB96 /* restrictedshine.tiff in Resources */ = {isa = PBXBuildFile; fileRef = 8B0713EA1E7CBC890057FB96 /* restrictedshine.tiff */; };
+		8B07202C1E8B36A900F7E789 /* BWTransitionManager+Fold.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07202B1E8B36A900F7E789 /* BWTransitionManager+Fold.m */; };
 		8B0798821E57CD460008F697 /* BWPhotoBrowserListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07987D1E57CD460008F697 /* BWPhotoBrowserListVC.m */; };
 		8B0798831E57CD460008F697 /* BWPhotoBrowserVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B07987F1E57CD460008F697 /* BWPhotoBrowserVC.m */; };
 		8B0798841E57CD460008F697 /* BWPhotoBrowserView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B0798811E57CD460008F697 /* BWPhotoBrowserView.m */; };
@@ -64,6 +65,8 @@
 		8B0713E81E7CBC890057FB96 /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line.png; sourceTree = "<group>"; };
 		8B0713E91E7CBC890057FB96 /* mask.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = mask.jpg; sourceTree = "<group>"; };
 		8B0713EA1E7CBC890057FB96 /* restrictedshine.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = restrictedshine.tiff; sourceTree = "<group>"; };
+		8B07202A1E8B36A900F7E789 /* BWTransitionManager+Fold.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BWTransitionManager+Fold.h"; sourceTree = "<group>"; };
+		8B07202B1E8B36A900F7E789 /* BWTransitionManager+Fold.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BWTransitionManager+Fold.m"; sourceTree = "<group>"; };
 		8B07987C1E57CD460008F697 /* BWPhotoBrowserListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWPhotoBrowserListVC.h; sourceTree = "<group>"; };
 		8B07987D1E57CD460008F697 /* BWPhotoBrowserListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWPhotoBrowserListVC.m; sourceTree = "<group>"; };
 		8B07987E1E57CD460008F697 /* BWPhotoBrowserVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWPhotoBrowserVC.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				8B09B0931E552F6300762889 /* BWTransitionManager+DotSpread.m */,
 				8B0713E41E7CB5840057FB96 /* BWTransitionManager+Scanning.h */,
 				8B0713E51E7CB5840057FB96 /* BWTransitionManager+Scanning.m */,
+				8B07202A1E8B36A900F7E789 /* BWTransitionManager+Fold.h */,
+				8B07202B1E8B36A900F7E789 /* BWTransitionManager+Fold.m */,
 				8B07A5781E36D57C0041F4D3 /* BWCustomTransition.h */,
 				8B07A5791E36D6970041F4D3 /* BWTransitionFoundation.h */,
 				8B01D83D1E2B3EA40062459A /* BWTransitionManager.h */,
@@ -326,6 +331,7 @@
 			files = (
 				8B07988E1E57D1DE0008F697 /* BWNormalFromViewController.m in Sources */,
 				8B09B08E1E55270300762889 /* BWDotSpreadVC.m in Sources */,
+				8B07202C1E8B36A900F7E789 /* BWTransitionManager+Fold.m in Sources */,
 				8B01D84E1E2B3EA40062459A /* UINavigationController+animationBlock.m in Sources */,
 				8B0798901E57D1DE0008F697 /* BWTransitionCollectionCell.m in Sources */,
 				8B01D8471E2B3EA40062459A /* BWCustomAnimation.m in Sources */,

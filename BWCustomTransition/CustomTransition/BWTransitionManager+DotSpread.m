@@ -74,20 +74,6 @@ static NSString * const kDotView = @"kDotView";
     NSLog(@"animationDidStop");
     [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
 }
-////恢复动画
-//- (void)resumeAnimation {
-//    
-//    //1.将动画的时间偏移量作为暂停的时间点
-//    CFTimeInterval pauseTime = myView.layer.timeOffset;
-//    
-//    //2.计算出开始时间
-//    CFTimeInterval begin = CACurrentMediaTime() - pauseTime;
-//    
-//    [myView.layer setTimeOffset:0];
-//    [myView.layer setBeginTime:begin];
-//    
-//    myView.layer.speed = 1;
-//}
 
 #pragma mark:propertys
 -(UIView *)dotView{

@@ -30,8 +30,9 @@ typedef NS_ENUM(NSInteger, BWAnimationTransition) {
     BWAnimationTransition_Scanning_Left,
     BWAnimationTransition_Scanning_Right,
     BWAnimationTransition_Scanning_Up,
-    BWAnimationTransition_Scanning_Down
-
+    BWAnimationTransition_Scanning_Down,
+    BWAnimationTransition_Fold_Left,
+    BWAnimationTransition_Fold_Right
 };
 typedef NS_ENUM(NSInteger, BWStackOutGesture) {
     BWStackOutGesture_None,

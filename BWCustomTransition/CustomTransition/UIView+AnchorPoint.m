@@ -9,10 +9,7 @@
 #import "UIView+AnchorPoint.h"
 
 @implementation UIView (AnchorPoint)
-- (void)setAnchorPointTo:(CGPoint)point forView:(UIView *)view{
-    view.frame = CGRectOffset(view.frame, (point.x - view.layer.anchorPoint.x) * view.frame.size.width, (point.y - view.layer.anchorPoint.y) * view.frame.size.height);
-    view.layer.anchorPoint = point;
-}
+
 -(void)bw_setAnchorPointTo:(CGPoint)anchorPointNew{
     CGPoint anchorPointOld = self.layer.anchorPoint;
     CGPoint positionOld = self.layer.position;
