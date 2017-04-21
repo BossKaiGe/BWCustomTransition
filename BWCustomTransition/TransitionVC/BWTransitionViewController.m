@@ -23,6 +23,8 @@ static NSString * const kMidPageTransition = @"MidPageTransition";
 static NSString * const kMidOpenDoorTransition = @"MidOpenDoorTransition";
 static NSString * const kScanningTransition = @"ScanningTransition";
 static NSString * const kFoldTransition = @"FoldTransition";
+static NSString * const kFragmentationTransition = @"kFragmentationTransition";
+static NSString * const kLinesTransition = @"kLinesTransition";
 @interface BWTransitionViewController ()
 @property(nonatomic,strong) NSArray * dataSource;
 @end
@@ -74,6 +76,16 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
         imgVC.stackInType = BWAnimationTransition_Fold_Left;
         imgVC.stackOutType = BWAnimationTransition_Fold_Right;
         [self.navigationController pushViewController:imgVC animated:YES];
+    }else if ([transitionType isEqualToString:kFragmentationTransition]){
+        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
+        imgVC.stackInType = BWAnimationTransition_Fragmentation;
+        imgVC.stackOutType = BWAnimationTransition_Fragmentation;
+        [self.navigationController pushViewController:imgVC animated:YES];
+    }else if ([transitionType isEqualToString:kLinesTransition]){
+        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
+        imgVC.stackInType = BWAnimationTransition_Lines_Right;
+        imgVC.stackOutType = BWAnimationTransition_Lines_Left;
+        [self.navigationController pushViewController:imgVC animated:YES];
     }
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -87,7 +99,7 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
 #pragma mark:懒加载
 -(NSArray *)dataSource{
     if (_dataSource == nil) {
-        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition,kDotSpreadTransition,kMidPageTransition,kMidOpenDoorTransition,kScanningTransition,kFoldTransition];
+        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition,kDotSpreadTransition,kMidPageTransition,kMidOpenDoorTransition,kScanningTransition,kFoldTransition,kFragmentationTransition,kLinesTransition];
     }
     return _dataSource;
 }

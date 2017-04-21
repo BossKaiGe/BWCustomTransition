@@ -15,6 +15,8 @@
 #import "BWTransitionManager+Mid_page.h"
 #import "BWTransitionManager+Scanning.h"
 #import "BWTransitionManager+Fold.h"
+#import "BWTransitionManager+Fragmentation.h"
+#import "BWTransitionManager+Lines.h"
 @interface BWTransitionManager()
 @end
 @implementation BWTransitionManager
@@ -91,6 +93,16 @@
         case BWAnimationTransition_Fold_Right:
             return [self generateFoldAnimationWithDuration:duration withOrientation:BWFlodOrientation_right];
             break;
+        case BWAnimationTransition_Fragmentation:
+            return [self generateFragmentationAnimationWithDuration:duration];
+        case BWAnimationTransition_Lines_Up:
+            return [self generateLinesAnimationWithDuration:duration withOrientation:BWLinesOrientation_up];
+        case BWAnimationTransition_Lines_Down:
+            return [self generateLinesAnimationWithDuration:duration withOrientation:BWLinesOrientation_down];
+        case BWAnimationTransition_Lines_Left:
+            return [self generateLinesAnimationWithDuration:duration withOrientation:BWLinesOrientation_left];
+        case BWAnimationTransition_Lines_Right:
+            return [self generateLinesAnimationWithDuration:duration withOrientation:BWLinesOrientation_right];
         default:
             break;
     }
