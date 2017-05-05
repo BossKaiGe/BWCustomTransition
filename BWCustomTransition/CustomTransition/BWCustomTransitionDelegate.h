@@ -10,5 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "BWPercentDrivenInteractiveTransition.h"
 @interface BWCustomTransitionDelegate : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,BWPercentDrivenInteractiveTransitionDelegate>
+/**
+ Processing system transition animation agent method
+ */
 +(instancetype)shareInstance;
 @end

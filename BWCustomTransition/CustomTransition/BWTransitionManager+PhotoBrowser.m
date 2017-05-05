@@ -81,6 +81,12 @@ static NSString * const kPhotoListView = @"kPhotoListView";
     }
     return CGRectMake(0, y, w, h);
 }
+-(UIImageView *)getTransitionImgView{
+    UIImageView * transitionImgView = [[UIImageView alloc]init];
+    transitionImgView.image = self.photoBrowserImgView.image;
+    transitionImgView.contentMode = self.photoBrowserImgView.contentMode;
+    return transitionImgView;
+}
 #pragma mark:properties
 -(void)setPhotoListView:(UICollectionView *)photoListView{
     objc_setAssociatedObject(self, (__bridge const void *)(kPhotoListView), photoListView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

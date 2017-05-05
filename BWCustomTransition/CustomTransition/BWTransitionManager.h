@@ -48,16 +48,59 @@ typedef NS_ENUM(NSInteger, BWStackOutGesture) {
     BWStackOutGesture_Down
 };
 @interface BWTransitionManager : NSObject <UINavigationControllerDelegate,UIViewControllerTransitioningDelegate,UITabBarControllerDelegate>
+
+/**
+The animation type for push or present
+ */
 @property(nonatomic,assign)BWAnimationTransition stackInType;
+
+/**
+ The animation type for pop or dismiss
+ */
 @property(nonatomic,assign)BWAnimationTransition stackOutType;
+
+/**
+ The animation block for push or present.You can use this property to customize the stack animation
+ */
 @property(nonatomic,copy)CustomAnimationBlock stackInBlock;
+
+/**
+ The animation block for pop or dismiss.You can use this property to customize the stack animation
+ */
 @property(nonatomic,copy)CustomAnimationBlock stackOutBlock;
+
+/**
+ The animation duration for push or present
+ */
 @property(nonatomic,assign)CGFloat transitionDuration_StackIn;
+
+/**
+ The animation duration for pop or dismiss
+ */
 @property(nonatomic,assign)CGFloat transitionDuration_StackOut;
+
+/**
+ The gesture type for pop or dismiss
+ */
 @property(nonatomic,assign)BWStackOutGesture stackOutGesture;
+
+/**
+ Multiple delegates, you can use this property to specify another delegate to handle other delegate methods. Such as page conversion tracking
+ */
 @property(nonatomic,weak)id originDelegate;
--(UIImageView *)getTransitionImgView;
+
+/**
+ Start generating animations
+ */
 -(void)generateAnimation;
+
+/**
+ stackInBlock setting method
+ */
 -(void)setStackInBlock:(CustomAnimationBlock)stackInBlock;
+
+/**
+ stackOutBlock setting method
+ */
 -(void)setStackOutBlock:(CustomAnimationBlock)stackOutBlock;
 @end

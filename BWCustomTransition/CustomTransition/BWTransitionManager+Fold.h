@@ -13,5 +13,13 @@ typedef NS_ENUM(NSInteger,BWFlodOrientation){
 };
 @interface BWTransitionManager (Fold)
 @property(nonatomic,strong)NSNumber * numberOfFolds;
+
+/**
+ Generate a view folding transition animation
+
+ @param duration Animation duration
+ @param orientation Folding orientation
+ @return The animation block
+ */
 -(CustomAnimationBlock)generateFoldAnimationWithDuration:(CGFloat)duration withOrientation:(BWFlodOrientation)orientation;
 @end

@@ -13,5 +13,4 @@
 #define BW_WeakSelf(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 typedef void (^CustomAnimationBlock)( id <UIViewControllerContextTransitioning> transitionContext);
 typedef void (^InitializeBlock) (BWTransitionManager * manager);
-
 #endif /* BWTransitionFoundation_h */

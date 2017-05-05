@@ -128,10 +128,5 @@
         return [super respondsToSelector:aSelector];
     }
 }
--(UIImageView *)getTransitionImgView{
-    UIImageView * transitionImgView = [[UIImageView alloc]init];
-    transitionImgView.image = self.photoBrowserImgView.image;
-    transitionImgView.contentMode = self.photoBrowserImgView.contentMode;
-    return transitionImgView;
-}
+
 @end

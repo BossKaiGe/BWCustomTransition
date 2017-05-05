@@ -9,5 +9,12 @@
 #import "BWTransitionManager.h"
 
 @interface BWTransitionManager (Fragmentation)
+
+/**
+ Generate view fragmentation transition animation
+
+ @param duration Animation duration
+ @return The animation block
+ */
 -(CustomAnimationBlock)generateFragmentationAnimationWithDuration:(CGFloat)duration;
 @end

@@ -9,5 +9,13 @@
 #import "BWTransitionManager.h"
 #import "BWTransitionFoundation.h"
 @interface BWTransitionManager (FadeAndScale)
+
+/**
+ 
+ Generate a fade and zoom in animation
+ 
+ @param duration The animation duration
+ @return The animation block
+ */
 -(CustomAnimationBlock)generateFadeAndScaleAnimationWithDuration:(CGFloat)duration;
 @end

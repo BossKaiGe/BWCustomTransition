@@ -15,5 +15,4 @@
 #endif
 @interface NSObject (Swizzle)
 + (BOOL)bw_swizzleMethod:(SEL)origSel_ withClass:(Class)altClass_ withMethod:(SEL)altSel_ error:(NSError **)error_;
-
 @end

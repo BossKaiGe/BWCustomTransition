@@ -12,7 +12,6 @@
 
 static NSString * const kTransitionManager = @"kTransitionManager";
 @implementation UINavigationController (animationBlock)
-@dynamic manager;
 #pragma mark:properties
 +(void)load{
     [self bw_swizzleMethod:@selector(bw_pushViewController:animated:) withClass:self withMethod:@selector(pushViewController:animated:) error:nil];
@@ -34,11 +33,5 @@ static NSString * const kTransitionManager = @"kTransitionManager";
     }
     return poppedController;
 }
-#pragma mark:properties
--(BWTransitionManager *)manager{
-    return objc_getAssociatedObject(self, (__bridge const void *)(kTransitionManager));
-}
--(void)setManager:(BWTransitionManager *)manager{
-    objc_setAssociatedObject(self, (__bridge const void *)(kTransitionManager), manager, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
+
 @end

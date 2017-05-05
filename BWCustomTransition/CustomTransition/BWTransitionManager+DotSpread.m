@@ -60,7 +60,6 @@ static NSString * const kDotView = @"kDotView";
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
     id<UIViewControllerContextTransitioning> transitionContext = [anim valueForKey:@"transitionContext"];
     CABasicAnimation * basicAnima = (CABasicAnimation *)anim;
-//    UIView * containerView = [transitionContext containerView];
     UIView * fromView = [transitionContext viewForKey:UITransitionContextFromViewKey];
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         CAShapeLayer * maskLayer = (CAShapeLayer *)fromView.layer.mask;

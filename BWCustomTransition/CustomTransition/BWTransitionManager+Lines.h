@@ -14,5 +14,13 @@ typedef NS_ENUM(NSInteger,BWLinesOrientation){
     BWLinesOrientation_down
 };
 @interface BWTransitionManager (Lines)
+
+/**
+ Generate a lines transition animation
+
+ @param duration Animation duration
+ @param orientation Animation orientation
+ @return The animation block
+ */
 -(CustomAnimationBlock)generateLinesAnimationWithDuration:(CGFloat)duration withOrientation:(BWLinesOrientation)orientation;
 @end

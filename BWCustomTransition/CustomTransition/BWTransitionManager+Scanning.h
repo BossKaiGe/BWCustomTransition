@@ -14,6 +14,18 @@ typedef NS_ENUM(NSInteger,BWScanningOrientation){
     BWScanningOrientation_down
 };
 @interface BWTransitionManager (Scanning)
+
+/**
+ You can change the scan bar by this property
+ */
 @property(nonatomic,strong)UIImage * scanImg;
+
+/**
+ Generate a scan transition animation
+
+ @param duration Animation duration
+ @param orientation scanning orientation
+ @return The animation block
+ */
 -(CustomAnimationBlock)generateScanningAnimationWithDuration:(CGFloat)duration withOrientation:(BWScanningOrientation)orientation;
 @end
