@@ -25,6 +25,7 @@ static NSString * const kScanningTransition = @"ScanningTransition";
 static NSString * const kFoldTransition = @"FoldTransition";
 static NSString * const kFragmentationTransition = @"kFragmentationTransition";
 static NSString * const kLinesTransition = @"kLinesTransition";
+static NSString * const kCustomTransition = @"kCustomTransition";
 @interface BWTransitionViewController ()
 @property(nonatomic,strong) NSArray * dataSource;
 @end
@@ -40,13 +41,12 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
 #pragma mark:UITableViewDelegate && UITableViewDataSource
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString * transitionType = self.dataSource[indexPath.row];
+    BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
     if ([transitionType isEqualToString:kFadeAndScaleTransition]) {
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_FadeAndScale;
         imgVC.stackOutType = BWAnimationTransition_FadeAndScale;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kPageInPageOutTransition]){
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_PageIn;
         imgVC.stackOutType = BWAnimationTransition_PageOut;
         [self.navigationController pushViewController:imgVC animated:YES];
@@ -57,34 +57,32 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
         BWDotSpreadVC * dotSpreadVC = [[BWDotSpreadVC alloc]init];
         [self.navigationController pushViewController:dotSpreadVC animated:YES];
     }else if ([transitionType isEqualToString:kMidPageTransition]){
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_Mid_page_Left;
         imgVC.stackOutType = BWAnimationTransition_Mid_page_Right;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kMidOpenDoorTransition]){
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_Mid_openDoor_Horizontal;
         imgVC.stackOutType = BWAnimationTransition_Mid_closeDoor_Horizontal;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kScanningTransition]){
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_Scanning_Right;
         imgVC.stackOutType = BWAnimationTransition_Scanning_Left;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kFoldTransition]){
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_Fold_Left;
         imgVC.stackOutType = BWAnimationTransition_Fold_Right;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kFragmentationTransition]){
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_Fragmentation;
         imgVC.stackOutType = BWAnimationTransition_Fragmentation;
         [self.navigationController pushViewController:imgVC animated:YES];
     }else if ([transitionType isEqualToString:kLinesTransition]){
-        BWNormalFromViewController * imgVC = [[BWNormalFromViewController alloc]init];
         imgVC.stackInType = BWAnimationTransition_Lines_Right;
         imgVC.stackOutType = BWAnimationTransition_Lines_Left;
+        [self.navigationController pushViewController:imgVC animated:YES];
+    }else if ([transitionType isEqualToString:kCustomTransition]){
+        imgVC.stackInType = BWAnimationTransition_Custom;
+        imgVC.stackOutType = BWAnimationTransition_Custom;
         [self.navigationController pushViewController:imgVC animated:YES];
     }
 }
@@ -99,7 +97,7 @@ static NSString * const kTableViewCellId = @"kTableViewCellId";
 #pragma mark:懒加载
 -(NSArray *)dataSource{
     if (_dataSource == nil) {
-        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition,kDotSpreadTransition,kMidPageTransition,kMidOpenDoorTransition,kScanningTransition,kFoldTransition,kFragmentationTransition,kLinesTransition];
+        _dataSource = @[kPhotoBrowserTransition,kPageInPageOutTransition,kFadeAndScaleTransition,kDotSpreadTransition,kMidPageTransition,kMidOpenDoorTransition,kScanningTransition,kFoldTransition,kFragmentationTransition,kLinesTransition,kCustomTransition];
     }
     return _dataSource;
 }

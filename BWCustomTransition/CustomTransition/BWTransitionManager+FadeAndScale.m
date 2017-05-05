@@ -20,10 +20,11 @@
             fromViewController.view.transform = CGAffineTransformScale(transform, .1, .3);
             toViewController.view.alpha = 1;
         } completion:^(BOOL finished) {
-
             fromViewController.view.transform = CGAffineTransformIdentity;
-
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            if ([transitionContext transitionWasCancelled]) {
+                [toViewController.view removeFromSuperview];
+            }
         }];
     };
 }

@@ -14,4 +14,8 @@
 #import "UINavigationController+animationBlock.h"
 #import "UIViewController+animationBlock.h"
 #import "BWTransitionManager+DotSpread.h"
+#import "BWTransitionManager+Scanning.h"
+#import "BWTransitionManager+Fold.h"
+#import "BWTransitionManager+Fragmentation.h"
+#import "BWTransitionManager+Lines.h"
 #endif /* BWCustomTransition_h */

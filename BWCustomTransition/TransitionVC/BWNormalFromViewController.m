@@ -27,6 +27,7 @@
 -(void)tapGestureTapped{
     BW_WeakSelf(ws);
     BWNormalToViewController * imgVC = [[BWNormalToViewController alloc]init];
+
     [imgVC setTipsWith:@"点我或右滑"];
     [imgVC setInitializeBlock:^(BWTransitionManager *manager) {
         manager.stackInType = ws.stackInType;
@@ -36,6 +37,47 @@
         manager.stackOutGesture = BWStackOutGesture_Right;
         manager.originDelegate = ws;
     }];
+    if (ws.stackInType == BWAnimationTransition_Custom) {
+        [imgVC.manager setStackInBlock:^(id<UIViewControllerContextTransitioning> transitionContext) {
+            UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+            UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+            [[transitionContext containerView] addSubview:toViewController.view];
+            toViewController.view.alpha = 0;
+            fromViewController.view.alpha = 1;
+            [UIView animateWithDuration:1 animations:^{
+                fromViewController.view.alpha = 0;
+                toViewController.view.alpha = 1;
+            } completion:^(BOOL finished) {
+                
+                fromViewController.view.alpha = 1;
+                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                if ([transitionContext transitionWasCancelled]) {
+                    [toViewController.view removeFromSuperview];
+                }
+            }];
+        } ];
+    }
+    if (ws.stackOutType == BWAnimationTransition_Custom) {
+        [imgVC.manager setStackOutBlock:^(id<UIViewControllerContextTransitioning> transitionContext) {
+            UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];
+            UIViewController* fromViewController = [transitionContext viewControllerForKey:UITransitionContextFromViewControllerKey];
+            [[transitionContext containerView] addSubview:toViewController.view];
+            toViewController.view.alpha = 0;
+            fromViewController.view.alpha = 1;
+            [UIView animateWithDuration:1 animations:^{
+                fromViewController.view.alpha = 0;
+                toViewController.view.alpha = 1;
+            } completion:^(BOOL finished) {
+                
+                fromViewController.view.alpha = 1;
+                [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+                if ([transitionContext transitionWasCancelled]) {
+                    [toViewController.view removeFromSuperview];
+                }
+            }];
+
+        }];
+    }
     [self.navigationController presentViewController:imgVC animated:YES completion:nil];
 }
 #pragma mark:UINavigationControllerDelegate
