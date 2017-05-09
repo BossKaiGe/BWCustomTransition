@@ -29,8 +29,8 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
     [photoBrowserVC setInitializeBlock:^(BWTransitionManager *manager) {
         manager.stackInType = BWAnimationTransition_PhotoBrowserIn;
         manager.stackOutType = BWAnimationTransition_PhotoBrowserOut;
-        manager.transitionDuration_StackIn = 2.0;
-        manager.transitionDuration_StackOut = 2.0;
+        manager.transitionDuration_StackIn = 0.6;
+        manager.transitionDuration_StackOut = 0.6;
         manager.stackOutGesture = BWStackOutGesture_Down;
         manager.photoBrowserImgView = collectionCell.imgView;
         manager.photoListView = collectionView;
@@ -47,7 +47,7 @@ static NSString * const kCollectionCellId = @"kCollectionCellId";
     return cell;
 }
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(400, 10, 0, 10);
+    return UIEdgeInsetsMake(0, 10, 0, 10);
 }
 
 #pragma mark:懒加载

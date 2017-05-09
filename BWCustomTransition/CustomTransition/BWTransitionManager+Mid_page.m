@@ -49,6 +49,9 @@
             [fromSnapShotView makeObjectsPerformSelector:@selector(removeFromSuperview)];
             [toSnapShotView makeObjectsPerformSelector:@selector(removeFromSuperview)];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            if ([transitionContext transitionWasCancelled]) {
+                [toView removeFromSuperview];
+            }
         }];
   
     };

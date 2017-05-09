@@ -22,6 +22,7 @@
     if (self) {
         self.targetVC = targetVC;
         self.delegate = [BWCustomTransitionDelegate shareInstance];
+        self.interactiveStackOutMaxAllowedInitialDistanceToLeftEdge = 0;
         [targetVC.view addGestureRecognizer:self.panGesture];
     }
     return self;
@@ -85,7 +86,7 @@
         if (self.delegate && [self.delegate respondsToSelector:@selector(bw_percentDrivenInteractiveTransitionWillEnd:)]) {
             [self.delegate bw_percentDrivenInteractiveTransitionWillEnd:self];
         }
-        if (percent >.5) {
+        if (percent >self.boundary) {
             [self finishInteractiveTransition];
         }else{
             [self cancelInteractiveTransition];
@@ -121,6 +122,15 @@
         return percent > 1 ? 1 :percent;
     }
 }
+- (BOOL)gestureRecognizerShouldBegin:(UIPanGestureRecognizer *)gestureRecognizer{
+    // Ignore when the beginning location is beyond max allowed initial distance to left edge.
+    CGPoint beginningLocation = [gestureRecognizer locationInView:gestureRecognizer.view];
+    CGFloat maxAllowedInitialDistance = self.interactiveStackOutMaxAllowedInitialDistanceToLeftEdge;
+    if (maxAllowedInitialDistance > 0 && beginningLocation.x > maxAllowedInitialDistance) {
+        return NO;
+    }
+    return YES;
+}
 #pragma mark:懒加载
 -(UIPanGestureRecognizer *)panGesture{
     if (_panGesture == nil) {
@@ -128,5 +138,12 @@
         _panGesture.delegate = self;
     }
     return _panGesture;
+}
+-(CGFloat)boundary{
+    if(_boundary >= 0.1 && _boundary <= 0.9) {
+        return _boundary;
+    }else{
+        return 0.5;
+    }
 }
 @end

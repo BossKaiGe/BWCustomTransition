@@ -1,0 +1,12 @@
+PODS:
+  - BWCustomTransition (1.0.0)
+
+DEPENDENCIES:
+  - BWCustomTransition
+
+SPEC CHECKSUMS:
+  BWCustomTransition: 3e5ad0e88ac18d1f5078ac57128e5a74de02a5e0
+
+PODFILE CHECKSUM: 7a4a7c555a506b160fa29c7c87e9ad6e71ef44f3
+
+COCOAPODS: 1.1.1

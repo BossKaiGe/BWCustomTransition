@@ -23,8 +23,10 @@ static NSString * const kPhotoListView = @"kPhotoListView";
         [UIView animateWithDuration:duration animations:^{
             transitionImgView.frame = [ws getFullRect];
         } completion:^(BOOL finished) {
-            UIView * toView = [transitionContext viewForKey:UITransitionContextToViewKey];
-            [[transitionContext containerView] addSubview:toView];
+            if (![transitionContext transitionWasCancelled]) {
+                UIView * toView = [transitionContext viewForKey:UITransitionContextToViewKey];
+                [[transitionContext containerView] addSubview:toView];
+            }
             [transitionImgView removeFromSuperview];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
         }];
@@ -46,6 +48,9 @@ static NSString * const kPhotoListView = @"kPhotoListView";
             [fromView removeFromSuperview];
             [transitionImgView removeFromSuperview];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            if ([transitionContext transitionWasCancelled]) {
+                [toView removeFromSuperview];
+            }
         }];
     };
 }

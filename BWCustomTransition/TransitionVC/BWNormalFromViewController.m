@@ -32,11 +32,13 @@
     [imgVC setInitializeBlock:^(BWTransitionManager *manager) {
         manager.stackInType = ws.stackInType;
         manager.stackOutType = ws.stackOutType;
-        manager.transitionDuration_StackIn = 1.0;
-        manager.transitionDuration_StackOut = 1.0;
+        manager.transitionDuration_StackIn = 0.6;
+        manager.transitionDuration_StackOut = 0.6;
         manager.stackOutGesture = BWStackOutGesture_Right;
         manager.originDelegate = ws;
     }];
+    imgVC.interactiveTransition.boundary = .4;
+    imgVC.interactiveTransition.interactiveStackOutMaxAllowedInitialDistanceToLeftEdge = 100;
     if (ws.stackInType == BWAnimationTransition_Custom) {
         [imgVC.manager setStackInBlock:^(id<UIViewControllerContextTransitioning> transitionContext) {
             UIViewController* toViewController = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey];

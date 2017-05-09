@@ -52,6 +52,9 @@
             [shadow removeFromSuperview];
 
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            if ([transitionContext transitionWasCancelled]) {
+                [toView removeFromSuperview];
+            }
         }];
     };
 }
@@ -87,13 +90,15 @@
             [ws applyLightingToFace:toView.layer];
             shadow.alpha = 0.0;
         } completion:^(BOOL finished) {
-            //7
             toView.layer.transform = CATransform3DIdentity;
             toView.layer.anchorPoint = CGPointMake(0.5, 0.5);
             toView.layer.position    = CGPointMake(CGRectGetMidX([UIScreen mainScreen].bounds), CGRectGetMidY([UIScreen mainScreen].bounds));
             toView.layer.transform = CATransform3DIdentity;
             [shadow removeFromSuperview];
             [transitionContext completeTransition:![transitionContext transitionWasCancelled]];
+            if ([transitionContext transitionWasCancelled]) {
+                [toView removeFromSuperview];
+            }
         }];
     };
 }
