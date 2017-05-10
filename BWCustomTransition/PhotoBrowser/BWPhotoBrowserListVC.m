@@ -9,7 +9,7 @@
 #import "BWPhotoBrowserListVC.h"
 #import "BWTransitionCollectionCell.h"
 #import "BWPhotoBrowserVC.h"
-#import "BWCustomTransition.h"
+#import <BWCustomTransition/BWCustomTransition.h>
 @interface BWPhotoBrowserListVC ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property(nonatomic,strong)UICollectionView * collectionView;
 @property(nonatomic,strong)NSArray * imgDataSource;

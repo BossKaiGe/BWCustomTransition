@@ -7,7 +7,6 @@
 //
 
 #import "BWNormalToViewController.h"
-#import "UIViewController+animationBlock.h"
 @interface BWNormalToViewController ()
 @property(nonatomic,strong)UIImageView * bgImg;
 @property(nonatomic,strong)UILabel * tipsLabel;

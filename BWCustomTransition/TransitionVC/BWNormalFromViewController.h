@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BWNormalFromViewController.h"
-#import "BWCustomTransition.h"
+#import <BWCustomTransition/BWCustomTransition.h>
 @interface BWNormalFromViewController : UIViewController
 @property(nonatomic,assign)BWAnimationTransition stackInType;
 @property(nonatomic,assign)BWAnimationTransition stackOutType;

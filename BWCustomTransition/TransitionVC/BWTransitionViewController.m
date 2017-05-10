@@ -6,9 +6,6 @@
 //  Copyright © 2017年 BossKai. All rights reserved.
 //
 #import "BWTransitionViewController.h"
-#import "BWTransitionManager.h"
-#import "UINavigationController+animationBlock.h"
-#import "UIViewController+animationBlock.h"
 #import "BWNormalToViewController.h"
 #import "BWTransitionCollectionCell.h"
 #import "BWPhotoBrowserVC.h"

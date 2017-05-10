@@ -8,8 +8,6 @@
 
 #import "BWNormalFromViewController.h"
 #import "BWNormalToViewController.h"
-#import "BWCustomTransition.h"
-#import "BWTransitionManager+Fold.h"
 @interface BWNormalFromViewController ()<UINavigationControllerDelegate>
 @property(nonatomic,strong)UIImageView * bgImg;
 @property(nonatomic,strong)UITapGestureRecognizer * tapGesture;

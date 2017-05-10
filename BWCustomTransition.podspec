@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "BWCustomTransition"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "A library that helps developers quickly integrate transition animations."
 
   # This description is used to generate tags and improve search results.
@@ -24,8 +24,8 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                   DESC
+  s.description  = "A library that helps developers quickly integrate transition animations."
+
 
   s.homepage     = "https://github.com/BossKaiGe/BWCustomTransition"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
@@ -64,7 +64,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  # s.platform     = :ios, "5.0"
+  s.platform     = :ios, "8.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"

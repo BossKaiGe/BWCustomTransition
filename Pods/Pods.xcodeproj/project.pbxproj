@@ -1,0 +1,618 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0080D1F3CD01CBD5AD84298371753769 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		0476466FCCB46984916B4A1BC41C9B32 /* BWTransitionManager+DotSpread.h in Headers */ = {isa = PBXBuildFile; fileRef = D4156F4946C9723051FFDE5ABD7865AC /* BWTransitionManager+DotSpread.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11468A45B06B2EF657F41273B6C70C75 /* NSObject+Swizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = ED528A4BB13E06D3E0BD6E7F8D67E5FD /* NSObject+Swizzle.m */; };
+		13CF2D43486721B1128CA9D0A3C9F4A5 /* BWTransitionManager+Mid_page.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E030AED49B7493308DF7119D02AE44C /* BWTransitionManager+Mid_page.m */; };
+		1645EA3127B61839FEE9EC543EDF61CC /* BWCustomTransitionDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4E545BEA1D378F3E4EE7E5117FD8EA /* BWCustomTransitionDelegate.m */; };
+		1BA4BC2E55D4595F81599A9B120E5A45 /* BWTransitionManager+Scanning.h in Headers */ = {isa = PBXBuildFile; fileRef = F98F5D8CDFF846990E8E52290BED06D0 /* BWTransitionManager+Scanning.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2117615208063C4F81572C2F43B2A298 /* BWTransitionManager+PhotoBrowser.h in Headers */ = {isa = PBXBuildFile; fileRef = E8B42A1BE577923CE7148C698F91C961 /* BWTransitionManager+PhotoBrowser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		23FCF83479A7AAB3DB4453B2B39FC3C1 /* UIView+ScreenShot.m in Sources */ = {isa = PBXBuildFile; fileRef = 25BAD23825983AAD0686B62B78844C8A /* UIView+ScreenShot.m */; };
+		24AF9C276E47B90B1B3D60C3C6B8BDF8 /* BWTransitionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C7617ADDCA6F0DF220C6BAF12E6D907D /* BWTransitionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		27BDE1DBE700BAE544D1FAC7739D2354 /* BWTransitionManager+Fragmentation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B5CB6EEE47F56100B987639C6EBE989 /* BWTransitionManager+Fragmentation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BE247C9799A11696E792AE52955A850 /* BWTransitionManager+Page.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A1E663EF84377E1731DB16C5125C320 /* BWTransitionManager+Page.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2BF33C9494DFE43CAD85076759D1C077 /* BWPercentDrivenInteractiveTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 76D05CF8D8B4CE39576DF48878D35852 /* BWPercentDrivenInteractiveTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DC56EB5677FAD1F70176A212141B266 /* UIView+AnchorPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 5D2BBA83EE1780C676A87916E4FBFD27 /* UIView+AnchorPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31EAF99776F8BBB87A6C9ACBEFB55FD4 /* BWTransitionManager+Fold.h in Headers */ = {isa = PBXBuildFile; fileRef = 65472F56B507887830CB2D8E2BDA82E4 /* BWTransitionManager+Fold.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		373628B3D8A25B7395B5066CC5E3894D /* UIView+AnchorPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = BFF6F11251771F58E2856958CBFA278B /* UIView+AnchorPoint.m */; };
+		508D772EE9BB36633268387C2521D4A0 /* BWTransitionManager+Lines.m in Sources */ = {isa = PBXBuildFile; fileRef = 45ED41D1B85C104D8D1FA19C254934ED /* BWTransitionManager+Lines.m */; };
+		51A5F28869FF911015B971DC090B0BF3 /* BWTransitionManager+PhotoBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = F1F3E1ED307E822652EEFF512D06E0C5 /* BWTransitionManager+PhotoBrowser.m */; };
+		555A9616122FC9140938C05FA96416D4 /* BWTransitionManager+Fragmentation.m in Sources */ = {isa = PBXBuildFile; fileRef = D997A59D8B0102F16D3D8EFD08792C88 /* BWTransitionManager+Fragmentation.m */; };
+		5667020C3445AFA3A755FCFE98561FFD /* UINavigationController+animationBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 32919C36A9DE4E9C835A1F21B211FA02 /* UINavigationController+animationBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5B9E0CFDC32AC517CA80D93105A2C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */; };
+		68E9CD936819BDA79168D96DA7FA40E8 /* BWCustomTransitionDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 37872346647E3B3F1A97E6CE904ACF50 /* BWCustomTransitionDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		71B103A3F8182591753578A6E0DD8057 /* BWTransitionManager+Page.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CCB632278A2A547B48B695A11FF5931 /* BWTransitionManager+Page.m */; };
+		7281E175FBAA4BD3DD49564D6D8B078C /* UINavigationController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = B16FBD8EB1330ECBEC749495996A632B /* UINavigationController+animationBlock.m */; };
+		7555AF40382788E5E2FC3998DFFCFAD7 /* BWTransitionManager+FadeAndScale.m in Sources */ = {isa = PBXBuildFile; fileRef = 842109E15588A93E289928954A2B6349 /* BWTransitionManager+FadeAndScale.m */; };
+		844CD7B1A64FB977C56F3042129D3CAA /* BWTransitionManager+Scanning.m in Sources */ = {isa = PBXBuildFile; fileRef = FBCEB7054D87635A5749850AE16F4ADC /* BWTransitionManager+Scanning.m */; };
+		A23D91458AC3C70233E4404D7416EA12 /* BWCustomTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 74A88CDAF1CADFA613714175CEECEE7D /* BWCustomTransition-dummy.m */; };
+		A2507EE3F447E86FE72764CE92D34D31 /* BWCustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = DD61601A7A90C46FB34EDCF335CA5A8C /* BWCustomAnimation.m */; };
+		AF170353837A02ECC0369344F085A292 /* BWTransitionManager+Fold.m in Sources */ = {isa = PBXBuildFile; fileRef = E16C0CCA770C3013D2CE61223EC5A751 /* BWTransitionManager+Fold.m */; };
+		B1D9AC6F0F49354195A9F7D2F26D9E00 /* UIView+ScreenShot.h in Headers */ = {isa = PBXBuildFile; fileRef = 8C6E1425721E2D188CEF705A1B5BDD00 /* UIView+ScreenShot.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B2FB6E2AE95DC558E606612783539F4D /* BWPercentDrivenInteractiveTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 982B966FCD99440727997A591B41EECC /* BWPercentDrivenInteractiveTransition.m */; };
+		BF1AD7B3C8E9E1E6D67B93D070604647 /* BWTransitionFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = DEF14B5178AC95D11288DA4C3911321B /* BWTransitionFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C4E3B3F2E08457BA9FDD488525C317E3 /* UIViewController+animationBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = EFD4D3A661DB8C150803B32C3BB14A56 /* UIViewController+animationBlock.m */; };
+		C680250AD608DE0A40305A8EDB6E9E6F /* Pods-BWCustomTransition-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4BF2BF72D00D456DF7B19CAEE4353520 /* Pods-BWCustomTransition-dummy.m */; };
+		CA879BDC8F7998349F3B49ACF78037FA /* BWTransitionManager+DotSpread.m in Sources */ = {isa = PBXBuildFile; fileRef = C568F2D45D0A31BA4E0AFF69ED48E349 /* BWTransitionManager+DotSpread.m */; };
+		CF804782D5EF40350FFD2EFCDDB38F09 /* BWTransitionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8DDC677D28F8C61B4E1E9F4649DDD3 /* BWTransitionManager.m */; };
+		D6D5D416F4597CEA13B28B04FA7BF27E /* UIViewController+animationBlock.h in Headers */ = {isa = PBXBuildFile; fileRef = 401B44F5CFD2ABADE1E7BC35133E770D /* UIViewController+animationBlock.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9ABE3ED214F8154D56CBAAED17D6A2C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */; };
+		E43535CC0A00D75FE5B18A850C548D37 /* BWTransitionManager+Lines.h in Headers */ = {isa = PBXBuildFile; fileRef = C0393F2FF0479E6A17E5E8C23FAA96D8 /* BWTransitionManager+Lines.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB73B1A2F4B5D3B97FA5B7694449434B /* BWTransitionManager+FadeAndScale.h in Headers */ = {isa = PBXBuildFile; fileRef = 89C1C64CDCB4E091C3B687F6E5925FBA /* BWTransitionManager+FadeAndScale.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7DBA73FCCC64955174C5ECE25563FA3 /* BWCustomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FFA25F6EA42CAF1082F2D0E91AFFD7F /* BWCustomAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9078719F93C73BD19BD9B98D81904E5 /* BWTransitionManager+Mid_page.h in Headers */ = {isa = PBXBuildFile; fileRef = 731404FFEC12F63AD54CAD06AEB23F67 /* BWTransitionManager+Mid_page.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA5B8FC1A943ED7E28EA053F25B5F814 /* NSObject+Swizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = 666008D8AD35750964C0FC00A841EEA6 /* NSObject+Swizzle.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FD0DD6C7B11D2E9D93319CB0B9AF377B /* BWCustomTransition.h in Headers */ = {isa = PBXBuildFile; fileRef = 63289CE701854217D39F96B80B7E396A /* BWCustomTransition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		919B0F5A79300CA49E54014BFF8A7D18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FC0BC47154E76880DEB70CF171B919C;
+			remoteInfo = BWCustomTransition;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0CCB632278A2A547B48B695A11FF5931 /* BWTransitionManager+Page.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+Page.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Page.m"; sourceTree = "<group>"; };
+		19407BE3A7E48D72DD7569CDBEEFDDBC /* libBWCustomTransition.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libBWCustomTransition.a; path = libBWCustomTransition.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A1E663EF84377E1731DB16C5125C320 /* BWTransitionManager+Page.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+Page.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Page.h"; sourceTree = "<group>"; };
+		25BAD23825983AAD0686B62B78844C8A /* UIView+ScreenShot.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+ScreenShot.m"; path = "BWCustomTransition/CustomTransition/UIView+ScreenShot.m"; sourceTree = "<group>"; };
+		32919C36A9DE4E9C835A1F21B211FA02 /* UINavigationController+animationBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+animationBlock.h"; path = "BWCustomTransition/CustomTransition/UINavigationController+animationBlock.h"; sourceTree = "<group>"; };
+		342847FC76ECAADFB4EF9E699EAA38BE /* Pods-BWCustomTransition.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BWCustomTransition.debug.xcconfig"; sourceTree = "<group>"; };
+		37872346647E3B3F1A97E6CE904ACF50 /* BWCustomTransitionDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BWCustomTransitionDelegate.h; path = BWCustomTransition/CustomTransition/BWCustomTransitionDelegate.h; sourceTree = "<group>"; };
+		3FFA25F6EA42CAF1082F2D0E91AFFD7F /* BWCustomAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BWCustomAnimation.h; path = BWCustomTransition/CustomTransition/BWCustomAnimation.h; sourceTree = "<group>"; };
+		401B44F5CFD2ABADE1E7BC35133E770D /* UIViewController+animationBlock.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+animationBlock.h"; path = "BWCustomTransition/CustomTransition/UIViewController+animationBlock.h"; sourceTree = "<group>"; };
+		45ED41D1B85C104D8D1FA19C254934ED /* BWTransitionManager+Lines.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+Lines.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Lines.m"; sourceTree = "<group>"; };
+		49070596B310854B7B7CFF5A8F9E4485 /* Pods-BWCustomTransition.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BWCustomTransition.release.xcconfig"; sourceTree = "<group>"; };
+		4B99C622E131D305562B184F7EFE4BBB /* Pods-BWCustomTransition-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-BWCustomTransition-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4BF2BF72D00D456DF7B19CAEE4353520 /* Pods-BWCustomTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BWCustomTransition-dummy.m"; sourceTree = "<group>"; };
+		4D93B58DC910E3DADF8A3CAFBD900623 /* Pods-BWCustomTransition-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BWCustomTransition-frameworks.sh"; sourceTree = "<group>"; };
+		4E6001CDBD1A18AB3527420DD606EB93 /* BWCustomTransition-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BWCustomTransition-prefix.pch"; sourceTree = "<group>"; };
+		5D2BBA83EE1780C676A87916E4FBFD27 /* UIView+AnchorPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnchorPoint.h"; path = "BWCustomTransition/CustomTransition/UIView+AnchorPoint.h"; sourceTree = "<group>"; };
+		616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		63289CE701854217D39F96B80B7E396A /* BWCustomTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BWCustomTransition.h; path = BWCustomTransition/CustomTransition/BWCustomTransition.h; sourceTree = "<group>"; };
+		65472F56B507887830CB2D8E2BDA82E4 /* BWTransitionManager+Fold.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+Fold.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Fold.h"; sourceTree = "<group>"; };
+		666008D8AD35750964C0FC00A841EEA6 /* NSObject+Swizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+Swizzle.h"; path = "BWCustomTransition/CustomTransition/NSObject+Swizzle.h"; sourceTree = "<group>"; };
+		731404FFEC12F63AD54CAD06AEB23F67 /* BWTransitionManager+Mid_page.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+Mid_page.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Mid_page.h"; sourceTree = "<group>"; };
+		74A88CDAF1CADFA613714175CEECEE7D /* BWCustomTransition-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BWCustomTransition-dummy.m"; sourceTree = "<group>"; };
+		76D05CF8D8B4CE39576DF48878D35852 /* BWPercentDrivenInteractiveTransition.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BWPercentDrivenInteractiveTransition.h; path = BWCustomTransition/CustomTransition/BWPercentDrivenInteractiveTransition.h; sourceTree = "<group>"; };
+		7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		842109E15588A93E289928954A2B6349 /* BWTransitionManager+FadeAndScale.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+FadeAndScale.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+FadeAndScale.m"; sourceTree = "<group>"; };
+		856D3EB629A7A92A6B9E7E7F8752728F /* Pods-BWCustomTransition-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-BWCustomTransition-resources.sh"; sourceTree = "<group>"; };
+		89C1C64CDCB4E091C3B687F6E5925FBA /* BWTransitionManager+FadeAndScale.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+FadeAndScale.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+FadeAndScale.h"; sourceTree = "<group>"; };
+		8C6E1425721E2D188CEF705A1B5BDD00 /* UIView+ScreenShot.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+ScreenShot.h"; path = "BWCustomTransition/CustomTransition/UIView+ScreenShot.h"; sourceTree = "<group>"; };
+		8F2312479901804FCD1F5DF413B7C675 /* BWCustomTransition.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BWCustomTransition.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		982B966FCD99440727997A591B41EECC /* BWPercentDrivenInteractiveTransition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BWPercentDrivenInteractiveTransition.m; path = BWCustomTransition/CustomTransition/BWPercentDrivenInteractiveTransition.m; sourceTree = "<group>"; };
+		9B5CB6EEE47F56100B987639C6EBE989 /* BWTransitionManager+Fragmentation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+Fragmentation.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Fragmentation.h"; sourceTree = "<group>"; };
+		9E030AED49B7493308DF7119D02AE44C /* BWTransitionManager+Mid_page.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+Mid_page.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Mid_page.m"; sourceTree = "<group>"; };
+		9F4E545BEA1D378F3E4EE7E5117FD8EA /* BWCustomTransitionDelegate.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BWCustomTransitionDelegate.m; path = BWCustomTransition/CustomTransition/BWCustomTransitionDelegate.m; sourceTree = "<group>"; };
+		9F595B76DF466A84A6A1E1D70F96AA04 /* libPods-BWCustomTransition.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-BWCustomTransition.a"; path = "libPods-BWCustomTransition.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4F1EF2FA9E7F391442A1B7337645250 /* Pods-BWCustomTransition-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-BWCustomTransition-acknowledgements.plist"; sourceTree = "<group>"; };
+		AD8DDC677D28F8C61B4E1E9F4649DDD3 /* BWTransitionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BWTransitionManager.m; path = BWCustomTransition/CustomTransition/BWTransitionManager.m; sourceTree = "<group>"; };
+		B16FBD8EB1330ECBEC749495996A632B /* UINavigationController+animationBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+animationBlock.m"; path = "BWCustomTransition/CustomTransition/UINavigationController+animationBlock.m"; sourceTree = "<group>"; };
+		BFF6F11251771F58E2856958CBFA278B /* UIView+AnchorPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnchorPoint.m"; path = "BWCustomTransition/CustomTransition/UIView+AnchorPoint.m"; sourceTree = "<group>"; };
+		C0393F2FF0479E6A17E5E8C23FAA96D8 /* BWTransitionManager+Lines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+Lines.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Lines.h"; sourceTree = "<group>"; };
+		C568F2D45D0A31BA4E0AFF69ED48E349 /* BWTransitionManager+DotSpread.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+DotSpread.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+DotSpread.m"; sourceTree = "<group>"; };
+		C7617ADDCA6F0DF220C6BAF12E6D907D /* BWTransitionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BWTransitionManager.h; path = BWCustomTransition/CustomTransition/BWTransitionManager.h; sourceTree = "<group>"; };
+		D4156F4946C9723051FFDE5ABD7865AC /* BWTransitionManager+DotSpread.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+DotSpread.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+DotSpread.h"; sourceTree = "<group>"; };
+		D997A59D8B0102F16D3D8EFD08792C88 /* BWTransitionManager+Fragmentation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+Fragmentation.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Fragmentation.m"; sourceTree = "<group>"; };
+		DD61601A7A90C46FB34EDCF335CA5A8C /* BWCustomAnimation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = BWCustomAnimation.m; path = BWCustomTransition/CustomTransition/BWCustomAnimation.m; sourceTree = "<group>"; };
+		DEF14B5178AC95D11288DA4C3911321B /* BWTransitionFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = BWTransitionFoundation.h; path = BWCustomTransition/CustomTransition/BWTransitionFoundation.h; sourceTree = "<group>"; };
+		E16C0CCA770C3013D2CE61223EC5A751 /* BWTransitionManager+Fold.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+Fold.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Fold.m"; sourceTree = "<group>"; };
+		E8B42A1BE577923CE7148C698F91C961 /* BWTransitionManager+PhotoBrowser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+PhotoBrowser.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+PhotoBrowser.h"; sourceTree = "<group>"; };
+		ED528A4BB13E06D3E0BD6E7F8D67E5FD /* NSObject+Swizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+Swizzle.m"; path = "BWCustomTransition/CustomTransition/NSObject+Swizzle.m"; sourceTree = "<group>"; };
+		EFD4D3A661DB8C150803B32C3BB14A56 /* UIViewController+animationBlock.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+animationBlock.m"; path = "BWCustomTransition/CustomTransition/UIViewController+animationBlock.m"; sourceTree = "<group>"; };
+		F1F3E1ED307E822652EEFF512D06E0C5 /* BWTransitionManager+PhotoBrowser.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+PhotoBrowser.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+PhotoBrowser.m"; sourceTree = "<group>"; };
+		F98F5D8CDFF846990E8E52290BED06D0 /* BWTransitionManager+Scanning.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "BWTransitionManager+Scanning.h"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Scanning.h"; sourceTree = "<group>"; };
+		FBCEB7054D87635A5749850AE16F4ADC /* BWTransitionManager+Scanning.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "BWTransitionManager+Scanning.m"; path = "BWCustomTransition/CustomTransition/BWTransitionManager+Scanning.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6504BDDFC011D4DFFA006428080D1AF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D9ABE3ED214F8154D56CBAAED17D6A2C /* Foundation.framework in Frameworks */,
+				5B9E0CFDC32AC517CA80D93105A2C39A /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8445337BD0CE0834E5F619DA385B3846 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0080D1F3CD01CBD5AD84298371753769 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1D5FC329E8531B1E9DD28EA8D07B436E /* Pods-BWCustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				4B99C622E131D305562B184F7EFE4BBB /* Pods-BWCustomTransition-acknowledgements.markdown */,
+				A4F1EF2FA9E7F391442A1B7337645250 /* Pods-BWCustomTransition-acknowledgements.plist */,
+				4BF2BF72D00D456DF7B19CAEE4353520 /* Pods-BWCustomTransition-dummy.m */,
+				4D93B58DC910E3DADF8A3CAFBD900623 /* Pods-BWCustomTransition-frameworks.sh */,
+				856D3EB629A7A92A6B9E7E7F8752728F /* Pods-BWCustomTransition-resources.sh */,
+				342847FC76ECAADFB4EF9E699EAA38BE /* Pods-BWCustomTransition.debug.xcconfig */,
+				49070596B310854B7B7CFF5A8F9E4485 /* Pods-BWCustomTransition.release.xcconfig */,
+			);
+			name = "Pods-BWCustomTransition";
+			path = "Target Support Files/Pods-BWCustomTransition";
+			sourceTree = "<group>";
+		};
+		3293601927EC893C7A031E4D6BE18A8D /* BWCustomTransition */ = {
+			isa = PBXGroup;
+			children = (
+				3FFA25F6EA42CAF1082F2D0E91AFFD7F /* BWCustomAnimation.h */,
+				DD61601A7A90C46FB34EDCF335CA5A8C /* BWCustomAnimation.m */,
+				63289CE701854217D39F96B80B7E396A /* BWCustomTransition.h */,
+				37872346647E3B3F1A97E6CE904ACF50 /* BWCustomTransitionDelegate.h */,
+				9F4E545BEA1D378F3E4EE7E5117FD8EA /* BWCustomTransitionDelegate.m */,
+				76D05CF8D8B4CE39576DF48878D35852 /* BWPercentDrivenInteractiveTransition.h */,
+				982B966FCD99440727997A591B41EECC /* BWPercentDrivenInteractiveTransition.m */,
+				DEF14B5178AC95D11288DA4C3911321B /* BWTransitionFoundation.h */,
+				C7617ADDCA6F0DF220C6BAF12E6D907D /* BWTransitionManager.h */,
+				AD8DDC677D28F8C61B4E1E9F4649DDD3 /* BWTransitionManager.m */,
+				D4156F4946C9723051FFDE5ABD7865AC /* BWTransitionManager+DotSpread.h */,
+				C568F2D45D0A31BA4E0AFF69ED48E349 /* BWTransitionManager+DotSpread.m */,
+				89C1C64CDCB4E091C3B687F6E5925FBA /* BWTransitionManager+FadeAndScale.h */,
+				842109E15588A93E289928954A2B6349 /* BWTransitionManager+FadeAndScale.m */,
+				65472F56B507887830CB2D8E2BDA82E4 /* BWTransitionManager+Fold.h */,
+				E16C0CCA770C3013D2CE61223EC5A751 /* BWTransitionManager+Fold.m */,
+				9B5CB6EEE47F56100B987639C6EBE989 /* BWTransitionManager+Fragmentation.h */,
+				D997A59D8B0102F16D3D8EFD08792C88 /* BWTransitionManager+Fragmentation.m */,
+				C0393F2FF0479E6A17E5E8C23FAA96D8 /* BWTransitionManager+Lines.h */,
+				45ED41D1B85C104D8D1FA19C254934ED /* BWTransitionManager+Lines.m */,
+				731404FFEC12F63AD54CAD06AEB23F67 /* BWTransitionManager+Mid_page.h */,
+				9E030AED49B7493308DF7119D02AE44C /* BWTransitionManager+Mid_page.m */,
+				1A1E663EF84377E1731DB16C5125C320 /* BWTransitionManager+Page.h */,
+				0CCB632278A2A547B48B695A11FF5931 /* BWTransitionManager+Page.m */,
+				E8B42A1BE577923CE7148C698F91C961 /* BWTransitionManager+PhotoBrowser.h */,
+				F1F3E1ED307E822652EEFF512D06E0C5 /* BWTransitionManager+PhotoBrowser.m */,
+				F98F5D8CDFF846990E8E52290BED06D0 /* BWTransitionManager+Scanning.h */,
+				FBCEB7054D87635A5749850AE16F4ADC /* BWTransitionManager+Scanning.m */,
+				666008D8AD35750964C0FC00A841EEA6 /* NSObject+Swizzle.h */,
+				ED528A4BB13E06D3E0BD6E7F8D67E5FD /* NSObject+Swizzle.m */,
+				32919C36A9DE4E9C835A1F21B211FA02 /* UINavigationController+animationBlock.h */,
+				B16FBD8EB1330ECBEC749495996A632B /* UINavigationController+animationBlock.m */,
+				5D2BBA83EE1780C676A87916E4FBFD27 /* UIView+AnchorPoint.h */,
+				BFF6F11251771F58E2856958CBFA278B /* UIView+AnchorPoint.m */,
+				8C6E1425721E2D188CEF705A1B5BDD00 /* UIView+ScreenShot.h */,
+				25BAD23825983AAD0686B62B78844C8A /* UIView+ScreenShot.m */,
+				401B44F5CFD2ABADE1E7BC35133E770D /* UIViewController+animationBlock.h */,
+				EFD4D3A661DB8C150803B32C3BB14A56 /* UIViewController+animationBlock.m */,
+				A7C69EE5390E164698CDB1C7035043D8 /* Support Files */,
+			);
+			name = BWCustomTransition;
+			path = BWCustomTransition;
+			sourceTree = "<group>";
+		};
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E6EE98446B568159EE277B68FD442AF0 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6CFB006E626A1CC7311700BCFC672A87 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3293601927EC893C7A031E4D6BE18A8D /* BWCustomTransition */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				6CFB006E626A1CC7311700BCFC672A87 /* Pods */,
+				AF66E603B53CE8E0D6468C05C0BAB929 /* Products */,
+				C79430434800577E11A88AF6EB06DF0B /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		A7C69EE5390E164698CDB1C7035043D8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				8F2312479901804FCD1F5DF413B7C675 /* BWCustomTransition.xcconfig */,
+				74A88CDAF1CADFA613714175CEECEE7D /* BWCustomTransition-dummy.m */,
+				4E6001CDBD1A18AB3527420DD606EB93 /* BWCustomTransition-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/BWCustomTransition";
+			sourceTree = "<group>";
+		};
+		AF66E603B53CE8E0D6468C05C0BAB929 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19407BE3A7E48D72DD7569CDBEEFDDBC /* libBWCustomTransition.a */,
+				9F595B76DF466A84A6A1E1D70F96AA04 /* libPods-BWCustomTransition.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C79430434800577E11A88AF6EB06DF0B /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				1D5FC329E8531B1E9DD28EA8D07B436E /* Pods-BWCustomTransition */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		E6EE98446B568159EE277B68FD442AF0 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				616BEB51ECCAD129BDBCB7A956B56CC6 /* Foundation.framework */,
+				7EC994CDC2D681BA26389F78A7E4B325 /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		AC67A898DBD65E1B983CCFB0AD3C88FE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7DBA73FCCC64955174C5ECE25563FA3 /* BWCustomAnimation.h in Headers */,
+				FD0DD6C7B11D2E9D93319CB0B9AF377B /* BWCustomTransition.h in Headers */,
+				68E9CD936819BDA79168D96DA7FA40E8 /* BWCustomTransitionDelegate.h in Headers */,
+				2BF33C9494DFE43CAD85076759D1C077 /* BWPercentDrivenInteractiveTransition.h in Headers */,
+				BF1AD7B3C8E9E1E6D67B93D070604647 /* BWTransitionFoundation.h in Headers */,
+				0476466FCCB46984916B4A1BC41C9B32 /* BWTransitionManager+DotSpread.h in Headers */,
+				EB73B1A2F4B5D3B97FA5B7694449434B /* BWTransitionManager+FadeAndScale.h in Headers */,
+				31EAF99776F8BBB87A6C9ACBEFB55FD4 /* BWTransitionManager+Fold.h in Headers */,
+				27BDE1DBE700BAE544D1FAC7739D2354 /* BWTransitionManager+Fragmentation.h in Headers */,
+				E43535CC0A00D75FE5B18A850C548D37 /* BWTransitionManager+Lines.h in Headers */,
+				F9078719F93C73BD19BD9B98D81904E5 /* BWTransitionManager+Mid_page.h in Headers */,
+				2BE247C9799A11696E792AE52955A850 /* BWTransitionManager+Page.h in Headers */,
+				2117615208063C4F81572C2F43B2A298 /* BWTransitionManager+PhotoBrowser.h in Headers */,
+				1BA4BC2E55D4595F81599A9B120E5A45 /* BWTransitionManager+Scanning.h in Headers */,
+				24AF9C276E47B90B1B3D60C3C6B8BDF8 /* BWTransitionManager.h in Headers */,
+				FA5B8FC1A943ED7E28EA053F25B5F814 /* NSObject+Swizzle.h in Headers */,
+				5667020C3445AFA3A755FCFE98561FFD /* UINavigationController+animationBlock.h in Headers */,
+				2DC56EB5677FAD1F70176A212141B266 /* UIView+AnchorPoint.h in Headers */,
+				B1D9AC6F0F49354195A9F7D2F26D9E00 /* UIView+ScreenShot.h in Headers */,
+				D6D5D416F4597CEA13B28B04FA7BF27E /* UIViewController+animationBlock.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6B14BC93216775533D3F68C87CF4FA19 /* Pods-BWCustomTransition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A584AA77C5D3AF5948DB67180CE3F08 /* Build configuration list for PBXNativeTarget "Pods-BWCustomTransition" */;
+			buildPhases = (
+				2A714AD7027D25D19ADD70AF07144860 /* Sources */,
+				8445337BD0CE0834E5F619DA385B3846 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3EB15C295C21DD4C61CC19AAF9CF194A /* PBXTargetDependency */,
+			);
+			name = "Pods-BWCustomTransition";
+			productName = "Pods-BWCustomTransition";
+			productReference = 9F595B76DF466A84A6A1E1D70F96AA04 /* libPods-BWCustomTransition.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		6FC0BC47154E76880DEB70CF171B919C /* BWCustomTransition */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7297565CBE67064C6DCE3802A282F8FA /* Build configuration list for PBXNativeTarget "BWCustomTransition" */;
+			buildPhases = (
+				DBC568423F6A066DA604194617147DE7 /* Sources */,
+				6504BDDFC011D4DFFA006428080D1AF4 /* Frameworks */,
+				AC67A898DBD65E1B983CCFB0AD3C88FE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BWCustomTransition;
+			productName = BWCustomTransition;
+			productReference = 19407BE3A7E48D72DD7569CDBEEFDDBC /* libBWCustomTransition.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = AF66E603B53CE8E0D6468C05C0BAB929 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FC0BC47154E76880DEB70CF171B919C /* BWCustomTransition */,
+				6B14BC93216775533D3F68C87CF4FA19 /* Pods-BWCustomTransition */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A714AD7027D25D19ADD70AF07144860 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C680250AD608DE0A40305A8EDB6E9E6F /* Pods-BWCustomTransition-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DBC568423F6A066DA604194617147DE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A2507EE3F447E86FE72764CE92D34D31 /* BWCustomAnimation.m in Sources */,
+				A23D91458AC3C70233E4404D7416EA12 /* BWCustomTransition-dummy.m in Sources */,
+				1645EA3127B61839FEE9EC543EDF61CC /* BWCustomTransitionDelegate.m in Sources */,
+				B2FB6E2AE95DC558E606612783539F4D /* BWPercentDrivenInteractiveTransition.m in Sources */,
+				CA879BDC8F7998349F3B49ACF78037FA /* BWTransitionManager+DotSpread.m in Sources */,
+				7555AF40382788E5E2FC3998DFFCFAD7 /* BWTransitionManager+FadeAndScale.m in Sources */,
+				AF170353837A02ECC0369344F085A292 /* BWTransitionManager+Fold.m in Sources */,
+				555A9616122FC9140938C05FA96416D4 /* BWTransitionManager+Fragmentation.m in Sources */,
+				508D772EE9BB36633268387C2521D4A0 /* BWTransitionManager+Lines.m in Sources */,
+				13CF2D43486721B1128CA9D0A3C9F4A5 /* BWTransitionManager+Mid_page.m in Sources */,
+				71B103A3F8182591753578A6E0DD8057 /* BWTransitionManager+Page.m in Sources */,
+				51A5F28869FF911015B971DC090B0BF3 /* BWTransitionManager+PhotoBrowser.m in Sources */,
+				844CD7B1A64FB977C56F3042129D3CAA /* BWTransitionManager+Scanning.m in Sources */,
+				CF804782D5EF40350FFD2EFCDDB38F09 /* BWTransitionManager.m in Sources */,
+				11468A45B06B2EF657F41273B6C70C75 /* NSObject+Swizzle.m in Sources */,
+				7281E175FBAA4BD3DD49564D6D8B078C /* UINavigationController+animationBlock.m in Sources */,
+				373628B3D8A25B7395B5066CC5E3894D /* UIView+AnchorPoint.m in Sources */,
+				23FCF83479A7AAB3DB4453B2B39FC3C1 /* UIView+ScreenShot.m in Sources */,
+				C4E3B3F2E08457BA9FDD488525C317E3 /* UIViewController+animationBlock.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3EB15C295C21DD4C61CC19AAF9CF194A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BWCustomTransition;
+			target = 6FC0BC47154E76880DEB70CF171B919C /* BWCustomTransition */;
+			targetProxy = 919B0F5A79300CA49E54014BFF8A7D18 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		094F044FE75099EDBD3D2B1A04E26469 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2312479901804FCD1F5DF413B7C675 /* BWCustomTransition.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BWCustomTransition/BWCustomTransition-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9624438EB3F29BF300EFC0D169D7033A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 342847FC76ECAADFB4EF9E699EAA38BE /* Pods-BWCustomTransition.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B49BE7AB61C93446316ABCBFD028AA1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8F2312479901804FCD1F5DF413B7C675 /* BWCustomTransition.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/BWCustomTransition/BWCustomTransition-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		B7F6C0F96D855E61A2C736CFA3F04708 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 49070596B310854B7B7CFF5A8F9E4485 /* Pods-BWCustomTransition.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A584AA77C5D3AF5948DB67180CE3F08 /* Build configuration list for PBXNativeTarget "Pods-BWCustomTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9624438EB3F29BF300EFC0D169D7033A /* Debug */,
+				B7F6C0F96D855E61A2C736CFA3F04708 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */,
+				862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7297565CBE67064C6DCE3802A282F8FA /* Build configuration list for PBXNativeTarget "BWCustomTransition" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B49BE7AB61C93446316ABCBFD028AA1C /* Debug */,
+				094F044FE75099EDBD3D2B1A04E26469 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}
