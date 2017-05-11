@@ -1,2 +1,2 @@
 # BWCustomTransition
-对系统转场动画进行封装，帮助您一行代码搞定转场动画
+A library that helps developers quickly integrate transition animations.
