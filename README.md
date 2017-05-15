@@ -27,3 +27,24 @@ In short, here is a short list of the cool things BWCustomTransition provide:
 ## Installation with CocoaPods
 `pod 'BWCustomTransition'`
 
+
+## How To Use
+
+```
+#import <BWCustomTransition/BWCustomTransition.h>
+...
+    BW_WeakSelf(ws);
+    BWNormalToViewController * imgVC = [[BWNormalToViewController alloc]init];
+    [imgVC setInitializeBlock:^(BWTransitionManager *manager) {
+        manager.stackInType = BWAnimationTransition_Scanning_Left;
+        manager.stackOutType = BWAnimationTransition_Scanning_Right;
+        manager.transitionDuration_StackIn = 0.6;
+        manager.transitionDuration_StackOut = 0.6;
+        manager.stackOutGesture = BWStackOutGesture_Right;
+        manager.originDelegate = ws;
+    }];
+    imgVC.interactiveTransition.boundary = .4;
+    imgVC.interactiveTransition.interactiveStackOutMaxAllowedInitialDistanceToLeftEdge = 100;
+    [self.navigationController presentViewController:imgVC animated:YES completion:nil];
+```
+- For details about how to use the library and clear examples, Please download the demo example.
